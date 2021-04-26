@@ -8,19 +8,27 @@ namespace InchirieriAuto
 {
     class Persoana
     {
-        public string nume;
-        public string prenume;
-        public string CNP;
-        public Persoana()
+        protected string nume;
+        protected string prenume;
+        protected string CNP;
+        public Persoana()//Constructor implicit
+        { 
+        }
+        public Persoana(string data)
         {
-            nume = "Neinregistrat";
-            prenume = "Neinregistrat";
-            CNP = "-------------";
+            string[] _date = data.Split(',');
+            nume = _date[0];
+            prenume = _date[1];
+            CNP = _date[2];
+            
         }
 
-        public string PreluareDate()
+        virtual public string ConversieLaSir()
         {
-            return $"Nume: {nume}\nPrenume: {prenume}\nCNP: {CNP}";    
+            string dateForDisplay = $"Nume: { nume} { prenume}\nCNP: { CNP}";
+
+
+            return dateForDisplay;
         }
     }
 }
