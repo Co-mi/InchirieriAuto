@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InchirieriAuto", "InchirieriAuto\InchirieriAuto.csproj", "{E6BEFEBF-A3F0-40D0-9077-8B95FFC78177}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrarieModele", "LibrarieModele\LibrarieModele.csproj", "{DD832D0D-CDB4-420A-9F09-33D407B05E0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NivelAccesDate", "NivelAccesDate\NivelAccesDate.csproj", "{4202046B-CA44-4D0F-A395-7C2FFB2B5BC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E6BEFEBF-A3F0-40D0-9077-8B95FFC78177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6BEFEBF-A3F0-40D0-9077-8B95FFC78177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6BEFEBF-A3F0-40D0-9077-8B95FFC78177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD832D0D-CDB4-420A-9F09-33D407B05E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD832D0D-CDB4-420A-9F09-33D407B05E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD832D0D-CDB4-420A-9F09-33D407B05E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD832D0D-CDB4-420A-9F09-33D407B05E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4202046B-CA44-4D0F-A395-7C2FFB2B5BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4202046B-CA44-4D0F-A395-7C2FFB2B5BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4202046B-CA44-4D0F-A395-7C2FFB2B5BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4202046B-CA44-4D0F-A395-7C2FFB2B5BC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

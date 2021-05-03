@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace InchirieriAuto
+namespace LibrarieModele
 {
-    class Inchiriere
+    public class Inchiriere
     {
-        int ID_inchiriere;
-        string CNP_client;
-        public string dataIncepere;
-        public string dataTerminare;
+        int ID_inchiriere { get; set; }
+        string CNP_client { get; set; }
+        public string dataIncepere { get; set; }
+        public string dataTerminare { get; set; }
 
         public Inchiriere(string _date)
         {
             string[] date = _date.Split(',');
             CNP_client = date[0];
-            int.TryParse(date[1], out ID_inchiriere);
+            int ID = ID_inchiriere;
+            int.TryParse(date[1], out ID);
             dataIncepere = date[2];
             dataTerminare = date[3];
         }
