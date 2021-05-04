@@ -15,17 +15,20 @@ namespace InchirieriAuto
             List<Client> clienti ;
             List<Angajat> angajati ;
             List<Masina> masini ;
+            List<Inchiriere> inchirieri  ;
 
             //variabila de tip interfata 'IStocareData' care este initializata 
             //cu o instanta a clasei 'AdministrareStudenti_FisierText' sau o instanta a clasei 'AdministrareStudenti_FisierBinar' in functie de setarea 'FormatSalvare' din fisierul AppConfig
             IStocareData adminClienti = StocareFactory.GetAdministratorStocare();
             IStocareData adminAngajati = StocareFactory.GetAdministratorStocare();
             IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
+            IStocareData admminInchirieri = StocareFactory.GetAdministratorStocare();
            
 
             clienti = adminClienti.GetClienti();
             angajati = adminClienti.GetAngajati();
             masini = adminClienti.GetMasini();
+            inchirieri = admminInchirieri.GetInchirieri();
 
             while (true)
             {
@@ -43,6 +46,9 @@ namespace InchirieriAuto
                         break;
                     case "AM":
                         AfisareMasini(masini);
+                        break;
+                    case "AI":
+                        AfisareInchirieri(inchirieri);
                         break;
                     case "CC":
                         Client clientTastatura = CitireClientTastatura();
@@ -62,6 +68,12 @@ namespace InchirieriAuto
                         //adaugare masina in fisier
                         adminMasini.AddMasina(masinaTastatura);
                         break;
+                    case "CI":
+                        Inchiriere inchiriereTastatura = CitireInchiriereTastatura();
+                        inchirieri.Add(inchiriereTastatura);
+                        //adaugare inchiriere in fisier
+                        adminAngajati.AddInchiriere(inchiriereTastatura);
+                        break;
                     case "SC":
                         CautareClient(adminClienti);
                         break;
@@ -71,6 +83,9 @@ namespace InchirieriAuto
                     case "SM":
                         CautareMasina(adminMasini);
                         break;
+                    case "SI":
+                        CautareInchiriere(admminInchirieri);
+                        break;
                     case "UC":
                         updateClient(adminClienti,clienti);
                         break;
@@ -79,6 +94,9 @@ namespace InchirieriAuto
                         break;
                     case "UM":
                         updateMasina(adminMasini, masini);
+                        break;
+                    case "UI":
+                        updateInchiriere(admminInchirieri, inchirieri);
                         break;
                     case "X":
                         return;
@@ -93,10 +111,10 @@ namespace InchirieriAuto
 
         public static void Meniu()
         {
-            Console.WriteLine("A. Afisare clienti.");
-            Console.WriteLine("C. Creare si adaugare client.");
-            Console.WriteLine("S. Cauta client in fisier.");
-            Console.WriteLine("U. Update client in fisier.");
+            Console.WriteLine("AC/AA/AM/AI. Afisare clienti/angajati/masini/inchirieri.");
+            Console.WriteLine("CC/CA/CM/CI. Creare si adaugare client/angajat/masina/inchiriere.");
+            Console.WriteLine("SC/SA/SM/SI. Cauta client/angajat/masina/inchiriere in fisier.");
+            Console.WriteLine("UC/UA/UM/UI. Update client/angajat/masina/inchiriere in fisier.");
             Console.WriteLine("X. Inchidere program.");
             Console.WriteLine("Alegeti o optiune.");
         }
@@ -359,11 +377,102 @@ namespace InchirieriAuto
         }
         #endregion
 
+        #region Inchirieri
+        public static void AfisareInchirieri(List<Inchiriere> inchirieri)
+        {
+            Console.WriteLine("Inchirierile efectuate sunt:");
+            for (int i = 0; i < inchirieri.Count; i++)
+            {
+                Console.WriteLine(((Inchiriere)inchirieri[i]).ConversieLaSir());
+                Console.WriteLine("\n");
+            }
+
+        }
+        public static Inchiriere CitireInchiriereTastatura()
+        {
+            Console.WriteLine("Introduceti ID-ul corespunzator inchirierii:");
+            string _ID_inchiriere = Console.ReadLine();
+
+            Console.WriteLine("Introduceti CNP corespunzator clientului:");
+            string _CNP_client= Console.ReadLine();
+
+            Console.WriteLine("Introduceit data inceperii inchirierii:");
+            string _DataInc = Console.ReadLine();
+
+            Console.WriteLine("Introduceti data terminarii inchirierii:");
+            string _DataTer = Console.ReadLine();
+
+            string Complet = _ID_inchiriere + "," + _CNP_client + "," + _DataInc + "," + _DataTer;
+            Inchiriere inchiriere = new Inchiriere(Complet);
+            return inchiriere;
+        }
+
+        public static void CautareInchiriere(IStocareData admminInchirieri)
+        {
+            Console.WriteLine("Introduceti ID-ul pe care doriti sa-l cautati:");
+            string _ID_inchiriere = Console.ReadLine();
+
+            Inchiriere inchiriere_cautata = admminInchirieri.GetInchiriere(Convert.ToInt32(_ID_inchiriere));
+            if (inchiriere_cautata == null)
+                Console.WriteLine("Aceasta inchiriere nu a fost gasita.");
+            else
+                Console.WriteLine(inchiriere_cautata.ConversieLaSir());
+        }
+
+        public static void updateInchiriere(IStocareData admminInchirieri, List<Inchiriere> inchirieri)
+        {
+
+            Console.WriteLine("Introduceti ID-ul pe care doriti sa-l cautati:");
+            string _ID_inchiriere = Console.ReadLine();
+
+            Inchiriere inchiriere_cautata = admminInchirieri.GetInchiriere(int.Parse(_ID_inchiriere));
+            if (inchiriere_cautata == null)
+                Console.WriteLine("Aceasta inchiriere nu a fost gasita.");
+            else
+            {
+                Console.WriteLine("Selecteaza ceea ce doresti sa modifici (i-id, c-CNP, d-data incepere, t-data terminare, dt = data incepere + data terminare,etc):");
+                string update = Console.ReadLine();
+                int i = 0;
+                while (inchirieri[i].ID_inchiriere != inchiriere_cautata.ID_inchiriere)
+                {
+                    i++;
+                }
+
+
+                if (update.Contains("i"))
+                {
+                    Console.WriteLine("Introdu noul ID: ");
+                    inchirieri[i].ID_inchiriere = Convert.ToInt32(Console.ReadLine());
+                }
+
+                if (update.Contains("c"))
+                {
+                    Console.WriteLine("Introdu noul CNP: ");
+                    inchirieri[i].CNP_client = Console.ReadLine();
+                }
+
+                if (update.Contains("d"))
+                {
+                    Console.WriteLine("Introdu alta data de incepere: ");
+                    inchirieri[i].dataIncepere = Console.ReadLine();
+                }
+
+                if (update.Contains("t"))
+                {
+                    Console.WriteLine("Introdu alta data de terminare: ");
+                    inchirieri[i].dataTerminare = Console.ReadLine();
+                }
+                admminInchirieri.UpdateFisierInchirieri(inchirieri);
+                Console.WriteLine("Modificare realizata cu succes!");
+            }
+        }
+        #endregion
+
     }
 }
 
 
-////////
+//////// Instantieri de referinta
 //Persoana p = new Persoana("Andrei,Orodici,555016270888"); //constructor Persoana
 //Console.WriteLine("Afisare informatii persoana:\n"+p.ConversieLaSir());
 

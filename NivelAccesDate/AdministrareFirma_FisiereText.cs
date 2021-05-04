@@ -335,5 +335,108 @@ namespace NivelAccesDate
             return null;
         }
         #endregion
+
+        #region Inchiriere
+        public void AddInchiriere(Inchiriere inchiriere)
+        {
+            try
+            {
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisierInchirieri, true))
+                {
+                    swFisierText.WriteLine(inchiriere.ConversieLaSir_PentruScriereInFisier());
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+        }
+
+
+        public void UpdateFisierInchirieri(List<Inchiriere> inchirieri)
+        {
+            try
+            {
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisierInchirieri, false))
+                {
+                    foreach (Inchiriere inchiriere in inchirieri)
+                        swFisierText.WriteLine(inchiriere.ConversieLaSir_PentruScriereInFisier());
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+        }
+
+        public List<Inchiriere> GetInchirieri()
+        {
+            List<Inchiriere> inchirieri = new List<Inchiriere>();
+
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisierInchirieri))
+                {
+                    string line;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Inchiriere inchiriereDinFisier = new Inchiriere(line);
+                        inchirieri.Add(inchiriereDinFisier);
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return inchirieri;
+        }
+
+        public Inchiriere GetInchiriere(int ID_inchiriere)
+        {
+            try
+            {
+                // instructiunea 'using' va apela sr.close()
+                using (StreamReader sr = new StreamReader(NumeFisierInchirieri))
+                {
+                    string line;
+
+                    //citeste cate o linie si creaza un obiect de tip student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Inchiriere inchiriereDinFisier = new Inchiriere(line);
+                        if (inchiriereDinFisier.ID_inchiriere == ID_inchiriere)
+                            return inchiriereDinFisier;
+                    }
+                }
+            }
+            catch (IOException eio)
+            {
+                throw new Exception("eroare la deschiderea fisierului. mesaj: " + eio.Message);
+            }
+            catch (Exception egen)
+            {
+                throw new Exception("eroare generica. mesaj: " + egen.Message);
+            }
+
+            return null;
+        }
+        #endregion
     }
 }

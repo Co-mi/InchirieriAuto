@@ -31,13 +31,13 @@ namespace NivelAccesDate
 
         List<Masina> GetMasini();
         #endregion
-        /*
+        
         #region Inchirieri
-        void AddInchirier(Inchiriere inchiriere);
-        void UpdateFisierInchieri(List<Inchiriere> inchirieri);
+        void AddInchiriere(Inchiriere inchiriere);
+        void UpdateFisierInchirieri(List<Inchiriere> inchirieri);
         Inchiriere GetInchiriere(int ID_inchiriere);
         List<Inchiriere> GetInchirieri();
         #endregion
-        */
+        
     }
 }
