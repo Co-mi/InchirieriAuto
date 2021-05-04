@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Angajat.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="Enumerari.cs" />
     <Compile Include="Inchiriere.cs" />
     <Compile Include="Masina.cs" />
     <Compile Include="Persoana.cs" />

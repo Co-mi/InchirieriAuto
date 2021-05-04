@@ -8,6 +8,7 @@ namespace InchirieriAuto
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
 
@@ -29,6 +30,7 @@ namespace InchirieriAuto
             angajati = adminClienti.GetAngajati();
             masini = adminClienti.GetMasini();
             inchirieri = admminInchirieri.GetInchirieri();
+
 
             while (true)
             {
@@ -118,6 +120,29 @@ namespace InchirieriAuto
             Console.WriteLine("X. Inchidere program.");
             Console.WriteLine("Alegeti o optiune.");
         }
+        public static void ListaModele()
+        {
+            Console.WriteLine("1 - Opel");
+            Console.WriteLine("2 - Renault");
+            Console.WriteLine("3 - BMW");
+            Console.WriteLine("4 - Audi");
+            Console.WriteLine("5 - Dacia");
+            Console.WriteLine("6 - Ford");
+            Console.WriteLine("7 - Volkswagen");
+            Console.WriteLine("8 - Mercedes");
+            Console.WriteLine("9 - Tesla");
+        }
+
+        public static void ListaOptiuni()
+        {
+            Console.WriteLine("\n0 - Niciuna");
+            Console.WriteLine("1 - Aer conditionat");
+            Console.WriteLine("2 - Navigatie");
+            Console.WriteLine("4 - Cutie automata");
+            Console.WriteLine("8 - Geamuri elesctice");
+            Console.WriteLine("16 - Decapotabila");
+        }
+
         #region Client
         public static void AfisareClienti(List<Client> clienti)
         {
@@ -308,8 +333,9 @@ namespace InchirieriAuto
         }
         public static Masina CitireMasinaTastatura()
         {
+            ListaModele();
             Console.WriteLine("Introduceti model:");
-            string model = Console.ReadLine();
+            int model = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Introduceti seria:");
             string serie = Console.ReadLine();
@@ -317,7 +343,12 @@ namespace InchirieriAuto
             Console.WriteLine("Introduceit pretul:");
             int pret = Convert.ToInt32(Console.ReadLine());
 
-            string numeComplet = model + "," + serie + "," + pret ;
+            ListaOptiuni();
+            Console.WriteLine("Introduceti optiunile masinii (sub forma x-y-z):");
+            string optiuni = Console.ReadLine();
+            
+
+            string numeComplet = model + "," + serie + "," + pret + "," + optiuni;
             Masina masina = new Masina(numeComplet);
             return masina;
         }
@@ -345,7 +376,7 @@ namespace InchirieriAuto
                 Console.WriteLine("Acesta masina nu a fost gasita.");
             else
             {
-                Console.WriteLine("Selecteaza ceea ce doresti sa modifici (m-model, s-serie, p-pret, mp = model+pret,etc):");
+                Console.WriteLine("Selecteaza ceea ce doresti sa modifici (m-model, s-serie, p-pret, o-optiuni, mp = model+pret,etc):");
                 string update = Console.ReadLine();
                 int i = 0;
                 while (masini[i].Serie != masina_cautata.Serie)
@@ -356,8 +387,10 @@ namespace InchirieriAuto
 
                 if (update.Contains("m"))
                 {
-                    Console.WriteLine("Introdu noul model: ");
-                    masini[i].Model = Console.ReadLine();
+                    ListaModele();
+                    Console.WriteLine("Introdu cifra corespunzatoare noului model: ");
+                     masini[i].Model = (ModelMasina)int.Parse(Console.ReadLine());
+                    
                 }
 
                 if (update.Contains("s"))
@@ -371,7 +404,26 @@ namespace InchirieriAuto
                     Console.WriteLine("Introdu noul pret: ");
                     masini[i].Pret = Convert.ToInt32(Console.ReadLine());
                 }
+
+                if (update.Contains("o"))
+                {
+                    ListaOptiuni();
+                    Console.WriteLine("Introdu noile optiuni: ");
+                    masini[i].Optiuni = (OptiuniMasina)0;
+                    string[] optiuni = Console.ReadLine().Split('-');
+
+                    foreach (string optiune in optiuni)
+                    {
+                        masini[i].Optiuni |= (OptiuniMasina)int.Parse(optiune);
+                    }
+                }
+
+
+
                 admminMasini.UpdateFisierMasini(masini);
+
+
+
                 Console.WriteLine("Modificare realizata cu succes!");
             }
         }
