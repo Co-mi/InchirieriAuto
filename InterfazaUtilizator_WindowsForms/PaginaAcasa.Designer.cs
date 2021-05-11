@@ -37,7 +37,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblTitluAcasa.AutoSize = true;
             this.lblTitluAcasa.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitluAcasa.ForeColor = System.Drawing.Color.White;
-            this.lblTitluAcasa.Location = new System.Drawing.Point(231, 131);
+            this.lblTitluAcasa.Location = new System.Drawing.Point(195, 122);
             this.lblTitluAcasa.Name = "lblTitluAcasa";
             this.lblTitluAcasa.Size = new System.Drawing.Size(645, 100);
             this.lblTitluAcasa.TabIndex = 6;
@@ -50,7 +50,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.Controls.Add(this.lblTitluAcasa);
             this.Name = "PaginaAcasa";
-            this.Size = new System.Drawing.Size(1136, 551);
+            this.Size = new System.Drawing.Size(1015, 480);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -39,6 +39,7 @@ namespace LibrarieModele
             }
 
             dateForDisplay = dateForDisplay.TrimEnd('-');
+           
 
             return dateForDisplay;
         }
