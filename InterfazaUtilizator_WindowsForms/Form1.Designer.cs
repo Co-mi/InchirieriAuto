@@ -29,270 +29,236 @@ namespace InterfazaUtilizator_WindowsForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btnAdaugare = new System.Windows.Forms.Button();
-            this.btnAfisare = new System.Windows.Forms.Button();
-            this.btnCautare = new System.Windows.Forms.Button();
-            this.btnModificare = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.pnlMeniu = new System.Windows.Forms.Panel();
+            this.btnInchirieri = new System.Windows.Forms.Button();
+            this.btnAngajati = new System.Windows.Forms.Button();
+            this.btnAcasa = new System.Windows.Forms.Button();
+            this.btnMasini = new System.Windows.Forms.Button();
+            this.btnClienti = new System.Windows.Forms.Button();
+            this.pctSigla = new System.Windows.Forms.PictureBox();
+            this.pnlSus = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.lblTitlu = new System.Windows.Forms.Label();
+            this.pctIesire = new System.Windows.Forms.PictureBox();
+            this.pnlJos = new System.Windows.Forms.Panel();
+            this.lblAutor = new System.Windows.Forms.Label();
+            this.pnlContinut = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnGit = new System.Windows.Forms.Button();
+            this.pnlMeniu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSigla)).BeginInit();
+            this.pnlSus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctIesire)).BeginInit();
+            this.pnlJos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnAdaugare
+            // pnlMeniu
             // 
-            this.btnAdaugare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdaugare.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdaugare.Location = new System.Drawing.Point(624, 14);
-            this.btnAdaugare.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdaugare.Name = "btnAdaugare";
-            this.btnAdaugare.Size = new System.Drawing.Size(86, 32);
-            this.btnAdaugare.TabIndex = 0;
-            this.btnAdaugare.Text = "Adaugare";
-            this.btnAdaugare.UseVisualStyleBackColor = false;
-            this.btnAdaugare.Click += new System.EventHandler(this.btnAdaugare_Click);
+            this.pnlMeniu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlMeniu.Controls.Add(this.btnInchirieri);
+            this.pnlMeniu.Controls.Add(this.btnAngajati);
+            this.pnlMeniu.Controls.Add(this.btnAcasa);
+            this.pnlMeniu.Controls.Add(this.btnMasini);
+            this.pnlMeniu.Controls.Add(this.btnClienti);
+            this.pnlMeniu.Controls.Add(this.pctSigla);
+            this.pnlMeniu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMeniu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMeniu.Name = "pnlMeniu";
+            this.pnlMeniu.Size = new System.Drawing.Size(68, 638);
+            this.pnlMeniu.TabIndex = 4;
             // 
-            // btnAfisare
+            // btnInchirieri
             // 
-            this.btnAfisare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnAfisare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAfisare.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAfisare.Location = new System.Drawing.Point(730, 14);
-            this.btnAfisare.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAfisare.Name = "btnAfisare";
-            this.btnAfisare.Size = new System.Drawing.Size(86, 32);
-            this.btnAfisare.TabIndex = 1;
-            this.btnAfisare.Text = "Afisare";
-            this.btnAfisare.UseVisualStyleBackColor = false;
+            this.btnInchirieri.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInchirieri.BackgroundImage")));
+            this.btnInchirieri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInchirieri.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInchirieri.FlatAppearance.BorderSize = 0;
+            this.btnInchirieri.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnInchirieri.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnInchirieri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInchirieri.Location = new System.Drawing.Point(0, 445);
+            this.btnInchirieri.Name = "btnInchirieri";
+            this.btnInchirieri.Size = new System.Drawing.Size(65, 65);
+            this.btnInchirieri.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnInchirieri, "Inchirieri");
+            this.btnInchirieri.UseVisualStyleBackColor = true;
             // 
-            // btnCautare
+            // btnAngajati
             // 
-            this.btnCautare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnCautare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCautare.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCautare.Location = new System.Drawing.Point(834, 14);
-            this.btnCautare.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCautare.Name = "btnCautare";
-            this.btnCautare.Size = new System.Drawing.Size(86, 32);
-            this.btnCautare.TabIndex = 2;
-            this.btnCautare.Text = "Cautare";
-            this.btnCautare.UseVisualStyleBackColor = false;
+            this.btnAngajati.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAngajati.BackgroundImage")));
+            this.btnAngajati.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAngajati.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAngajati.FlatAppearance.BorderSize = 0;
+            this.btnAngajati.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnAngajati.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAngajati.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAngajati.Location = new System.Drawing.Point(0, 303);
+            this.btnAngajati.Name = "btnAngajati";
+            this.btnAngajati.Size = new System.Drawing.Size(65, 65);
+            this.btnAngajati.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.btnAngajati, "Angajati");
+            this.btnAngajati.UseVisualStyleBackColor = true;
             // 
-            // btnModificare
+            // btnAcasa
             // 
-            this.btnModificare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.btnModificare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificare.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificare.Location = new System.Drawing.Point(938, 14);
-            this.btnModificare.Margin = new System.Windows.Forms.Padding(4);
-            this.btnModificare.Name = "btnModificare";
-            this.btnModificare.Size = new System.Drawing.Size(86, 32);
-            this.btnModificare.TabIndex = 3;
-            this.btnModificare.Text = "Modificare";
-            this.btnModificare.UseVisualStyleBackColor = false;
+            this.btnAcasa.BackColor = System.Drawing.Color.Transparent;
+            this.btnAcasa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAcasa.BackgroundImage")));
+            this.btnAcasa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAcasa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAcasa.FlatAppearance.BorderSize = 0;
+            this.btnAcasa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnAcasa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAcasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcasa.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAcasa.Location = new System.Drawing.Point(0, 155);
+            this.btnAcasa.Name = "btnAcasa";
+            this.btnAcasa.Size = new System.Drawing.Size(65, 65);
+            this.btnAcasa.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.btnAcasa, "Acasa");
+            this.btnAcasa.UseVisualStyleBackColor = false;
+            this.btnAcasa.Click += new System.EventHandler(this.btnAcasa_Click);
             // 
-            // panel1
+            // btnMasini
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(68, 638);
-            this.panel1.TabIndex = 4;
+            this.btnMasini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasini.BackgroundImage")));
+            this.btnMasini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMasini.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMasini.FlatAppearance.BorderSize = 0;
+            this.btnMasini.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnMasini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMasini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMasini.Location = new System.Drawing.Point(0, 374);
+            this.btnMasini.Name = "btnMasini";
+            this.btnMasini.Size = new System.Drawing.Size(65, 65);
+            this.btnMasini.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.btnMasini, "Masini");
+            this.btnMasini.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnClienti
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 445);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(65, 65);
-            this.button4.TabIndex = 10;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnClienti.BackColor = System.Drawing.Color.Transparent;
+            this.btnClienti.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClienti.BackgroundImage")));
+            this.btnClienti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClienti.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClienti.FlatAppearance.BorderSize = 0;
+            this.btnClienti.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnClienti.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClienti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClienti.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClienti.Location = new System.Drawing.Point(0, 232);
+            this.btnClienti.Name = "btnClienti";
+            this.btnClienti.Size = new System.Drawing.Size(65, 65);
+            this.btnClienti.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnClienti, "Clienti");
+            this.btnClienti.UseVisualStyleBackColor = false;
+            this.btnClienti.Click += new System.EventHandler(this.btnClienti_Click);
             // 
-            // button3
+            // pctSigla
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(0, 303);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(65, 65);
-            this.button3.TabIndex = 9;
-            this.button3.UseVisualStyleBackColor = true;
+            this.pctSigla.Image = ((System.Drawing.Image)(resources.GetObject("pctSigla.Image")));
+            this.pctSigla.Location = new System.Drawing.Point(6, 3);
+            this.pctSigla.Name = "pctSigla";
+            this.pctSigla.Size = new System.Drawing.Size(59, 59);
+            this.pctSigla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctSigla.TabIndex = 6;
+            this.pctSigla.TabStop = false;
+            // 
+            // pnlSus
+            // 
+            this.pnlSus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pnlSus.Controls.Add(this.btnGit);
+            this.pnlSus.Controls.Add(this.button1);
+            this.pnlSus.Controls.Add(this.lblTitlu);
+            this.pnlSus.Controls.Add(this.pctIesire);
+            this.pnlSus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSus.Location = new System.Drawing.Point(68, 0);
+            this.pnlSus.Name = "pnlSus";
+            this.pnlSus.Size = new System.Drawing.Size(1136, 61);
+            this.pnlSus.TabIndex = 5;
+            this.pnlSus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.pnlSus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.pnlSus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(0, 232);
+            this.button1.Location = new System.Drawing.Point(1064, 18);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 65);
-            this.button1.TabIndex = 7;
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 6;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // lblTitlu
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.lblTitlu.AutoSize = true;
+            this.lblTitlu.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitlu.Location = new System.Drawing.Point(66, 14);
+            this.lblTitlu.Name = "lblTitlu";
+            this.lblTitlu.Size = new System.Drawing.Size(217, 34);
+            this.lblTitlu.TabIndex = 5;
+            this.lblTitlu.Text = "Inchirieri Auto";
             // 
-            // button2
+            // pctIesire
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(0, 374);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 65);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = true;
+            this.pctIesire.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctIesire.Image = ((System.Drawing.Image)(resources.GetObject("pctIesire.Image")));
+            this.pctIesire.Location = new System.Drawing.Point(1102, 18);
+            this.pctIesire.Name = "pctIesire";
+            this.pctIesire.Size = new System.Drawing.Size(22, 22);
+            this.pctIesire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctIesire.TabIndex = 4;
+            this.pctIesire.TabStop = false;
+            this.pctIesire.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // panel2
+            // pnlJos
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.btnAdaugare);
-            this.panel2.Controls.Add(this.btnModificare);
-            this.panel2.Controls.Add(this.btnAfisare);
-            this.panel2.Controls.Add(this.btnCautare);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(68, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1136, 61);
-            this.panel2.TabIndex = 5;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
-            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            this.pnlJos.Controls.Add(this.lblAutor);
+            this.pnlJos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlJos.Location = new System.Drawing.Point(68, 612);
+            this.pnlJos.Name = "pnlJos";
+            this.pnlJos.Size = new System.Drawing.Size(1136, 26);
+            this.pnlJos.TabIndex = 6;
             // 
-            // button5
+            // lblAutor
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(0, 155);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(65, 65);
-            this.button5.TabIndex = 11;
-            this.button5.UseVisualStyleBackColor = false;
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.ForeColor = System.Drawing.Color.White;
+            this.lblAutor.Location = new System.Drawing.Point(496, 0);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(161, 17);
+            this.lblAutor.TabIndex = 0;
+            this.lblAutor.Text = "© 2021 Pascariu Cosmin";
             // 
-            // pictureBox2
+            // pnlContinut
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1102, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pnlContinut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContinut.Location = new System.Drawing.Point(68, 61);
+            this.pnlContinut.Name = "pnlContinut";
+            this.pnlContinut.Size = new System.Drawing.Size(1136, 551);
+            this.pnlContinut.TabIndex = 7;
             // 
-            // panel3
+            // btnGit
             // 
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(68, 612);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1136, 26);
-            this.panel3.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(496, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "© 2021 Pascariu Cosmin";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.Color.Transparent;
-            this.button7.Location = new System.Drawing.Point(4, 5);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 50);
-            this.button7.TabIndex = 12;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.Transparent;
-            this.button8.Location = new System.Drawing.Point(60, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(50, 50);
-            this.button8.TabIndex = 13;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnGit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGit.BackgroundImage")));
+            this.btnGit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGit.FlatAppearance.BorderSize = 0;
+            this.btnGit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnGit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGit.Location = new System.Drawing.Point(1058, 16);
+            this.btnGit.Name = "btnGit";
+            this.btnGit.Size = new System.Drawing.Size(27, 27);
+            this.btnGit.TabIndex = 7;
+            this.btnGit.UseVisualStyleBackColor = true;
+            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
             // 
             // Form1
             // 
@@ -300,9 +266,10 @@ namespace InterfazaUtilizator_WindowsForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(1204, 638);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContinut);
+            this.Controls.Add(this.pnlJos);
+            this.Controls.Add(this.pnlSus);
+            this.Controls.Add(this.pnlMeniu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -310,35 +277,35 @@ namespace InterfazaUtilizator_WindowsForms
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.pnlMeniu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctSigla)).EndInit();
+            this.pnlSus.ResumeLayout(false);
+            this.pnlSus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctIesire)).EndInit();
+            this.pnlJos.ResumeLayout(false);
+            this.pnlJos.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAdaugare;
-        private System.Windows.Forms.Button btnAfisare;
-        private System.Windows.Forms.Button btnCautare;
-        private System.Windows.Forms.Button btnModificare;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnlMeniu;
+        private System.Windows.Forms.Panel pnlSus;
+        private System.Windows.Forms.PictureBox pctSigla;
+        private System.Windows.Forms.PictureBox pctIesire;
+        private System.Windows.Forms.Panel pnlJos;
+        private System.Windows.Forms.Label lblAutor;
+        private System.Windows.Forms.Button btnAcasa;
+        private System.Windows.Forms.Button btnInchirieri;
+        private System.Windows.Forms.Button btnAngajati;
+        private System.Windows.Forms.Button btnMasini;
+        private System.Windows.Forms.Button btnClienti;
+        private System.Windows.Forms.Label lblTitlu;
+        private System.Windows.Forms.Panel pnlContinut;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnGit;
     }
 }
 
