@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E6BEFEBF-A3F0-40D0-9077-8B95FFC78177}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>InchirieriAuto</RootNamespace>
-    <AssemblyName>InchirieriAuto</AssemblyName>
+    <RootNamespace>InterfataUtilizator_Consola</RootNamespace>
+    <AssemblyName>InterfataUtilizator_Consola</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

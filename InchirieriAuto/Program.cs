@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using LibrarieModele;
 using NivelAccesDate;
 
-namespace InchirieriAuto
+namespace InterfataUtilizator_Consola
 {
     class Program
     {
@@ -20,15 +20,15 @@ namespace InchirieriAuto
 
             //variabila de tip interfata 'IStocareData' care este initializata 
             //cu o instanta a clasei 'AdministrareStudenti_FisierText' sau o instanta a clasei 'AdministrareStudenti_FisierBinar' in functie de setarea 'FormatSalvare' din fisierul AppConfig
-            IStocareData adminClienti = StocareFactory.GetAdministratorStocare();
-            IStocareData adminAngajati = StocareFactory.GetAdministratorStocare();
-            IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
-            IStocareData admminInchirieri = StocareFactory.GetAdministratorStocare();
+            IStocareClienti adminClienti = StocareFactory.GetAdministratorStocareClienti();
+            IStocareAngajati adminAngajati = StocareFactory.GetAdministratorStocareAngajati();
+            IStocareMasini adminMasini = StocareFactory.GetAdministratorStocareMasini();
+            IStocareInchirieri admminInchirieri = StocareFactory.GetAdministratorStocareInchirieri();
            
 
             clienti = adminClienti.GetClienti();
-            angajati = adminClienti.GetAngajati();
-            masini = adminClienti.GetMasini();
+            angajati = adminAngajati.GetAngajati();
+            masini = adminMasini.GetMasini();
             inchirieri = admminInchirieri.GetInchirieri();
 
 
@@ -74,7 +74,7 @@ namespace InchirieriAuto
                         Inchiriere inchiriereTastatura = CitireInchiriereTastatura();
                         inchirieri.Add(inchiriereTastatura);
                         //adaugare inchiriere in fisier
-                        adminAngajati.AddInchiriere(inchiriereTastatura);
+                        admminInchirieri.AddInchiriere(inchiriereTastatura);
                         break;
                     case "SC":
                         CautareClient(adminClienti);
@@ -173,7 +173,7 @@ namespace InchirieriAuto
             return client;
         }
 
-        public static void CautareClient(IStocareData admminClienti)
+        public static void CautareClient(IStocareClienti admminClienti)
         {
             string nume, prenume;
             Console.Write("Introduceti numele clientului cautat: ");
@@ -188,7 +188,7 @@ namespace InchirieriAuto
                 Console.WriteLine(client_cautat.ConversieLaSir());
         }
 
-        public static void updateClient(IStocareData admminClienti, List<Client> clienti)
+        public static void updateClient(IStocareClienti admminClienti, List<Client> clienti)
         {
             string nume, prenume;
             Console.Write("Introduceti numele clientului ale carui informatii doresti sa le modifici : ");
@@ -262,7 +262,7 @@ namespace InchirieriAuto
             Angajat angajat = new Angajat(numeComplet);
             return angajat;
         }
-        public static void CautareAngajat(IStocareData admminAngajati)
+        public static void CautareAngajat(IStocareAngajati admminAngajati)
         {
             string nume, prenume;
             Console.Write("Introduceti numele angajatului cautat: ");
@@ -276,7 +276,7 @@ namespace InchirieriAuto
             else
                 Console.WriteLine(angajat_cautat.ConversieLaSir());
         }
-        public static void updateAngajat(IStocareData admminAngajati, List<Angajat> angajati)
+        public static void updateAngajat(IStocareAngajati admminAngajati, List<Angajat> angajati)
         {
             string nume, prenume;
             Console.Write("Introduceti numele angajatului ale carui informatii doresti sa le modifici : ");
@@ -353,7 +353,7 @@ namespace InchirieriAuto
             return masina;
         }
 
-        public static void CautareMasina(IStocareData admminMasini)
+        public static void CautareMasina(IStocareMasini admminMasini)
         {
             string serie;
             Console.Write("Introduceti seria masinii pe care o cautati: ");
@@ -366,7 +366,7 @@ namespace InchirieriAuto
                 Console.WriteLine(masina_cautata.ConversieLaSir());
         }
 
-        public static void updateMasina(IStocareData admminMasini, List<Masina> masini)
+        public static void updateMasina(IStocareMasini admminMasini, List<Masina> masini)
         {
             string serie;
             Console.Write("Introduceti seria masinii ale carui informatii doresti sa le modifici : ");
@@ -459,7 +459,7 @@ namespace InchirieriAuto
             return inchiriere;
         }
 
-        public static void CautareInchiriere(IStocareData admminInchirieri)
+        public static void CautareInchiriere(IStocareInchirieri admminInchirieri)
         {
             Console.WriteLine("Introduceti ID-ul pe care doriti sa-l cautati:");
             string _ID_inchiriere = Console.ReadLine();
@@ -471,7 +471,7 @@ namespace InchirieriAuto
                 Console.WriteLine(inchiriere_cautata.ConversieLaSir());
         }
 
-        public static void updateInchiriere(IStocareData admminInchirieri, List<Inchiriere> inchirieri)
+        public static void updateInchiriere(IStocareInchirieri admminInchirieri, List<Inchiriere> inchirieri)
         {
 
             Console.WriteLine("Introduceti ID-ul pe care doriti sa-l cautati:");

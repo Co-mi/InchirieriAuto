@@ -1,7 +1,7 @@
 ﻿using NivelAccesDate;
 using System.Configuration;
 
-namespace InchirieriAuto
+namespace InterfataUtilizator_Consola
 {
     class StocareFactory
     {
@@ -11,17 +11,44 @@ namespace InchirieriAuto
         private const string NUME_FISIER_MASINI = "NumeFisierMasini";
         private const string NUME_FISIER_INCHIRIERI = "NumeFisierInchirieri";
 
-        public static IStocareData GetAdministratorStocare()
+        public static IStocareClienti GetAdministratorStocareClienti()
         {
             var formatSalvare = ConfigurationManager.AppSettings[FORMAT_SALVARE];
             var numeFisierClienti = ConfigurationManager.AppSettings[NUME_FISIER_CLIENTI];
-            var numeFisierAngajati = ConfigurationManager.AppSettings[NUME_FISIER_ANGAJATI];
-            var numeFisierMasini = ConfigurationManager.AppSettings[NUME_FISIER_MASINI];
-            var numeFisierInchirieri = ConfigurationManager.AppSettings[NUME_FISIER_INCHIRIERI];
             if(formatSalvare != null)
             {
-                return new AdministrareFirma_FisiereText(numeFisierClienti + "." + formatSalvare, numeFisierAngajati + "." + formatSalvare,
-                    numeFisierMasini + "." + formatSalvare, numeFisierInchirieri + "." + formatSalvare);
+                return new AdministrareClienti_FisiereText(numeFisierClienti + "." + formatSalvare);
+            }
+            return null;
+        }
+        public static IStocareAngajati GetAdministratorStocareAngajati()
+        {
+            var formatSalvare = ConfigurationManager.AppSettings[FORMAT_SALVARE];
+            var numeFisierAngajati = ConfigurationManager.AppSettings[NUME_FISIER_ANGAJATI];
+           
+            if (formatSalvare != null)
+            {
+                return new AdministrareAngajati_FisiereText( numeFisierAngajati + "." + formatSalvare);
+            }
+            return null;
+        }
+        public static IStocareMasini GetAdministratorStocareMasini()
+        {
+            var formatSalvare = ConfigurationManager.AppSettings[FORMAT_SALVARE];
+            var numeFisierMasini = ConfigurationManager.AppSettings[NUME_FISIER_MASINI];
+            if (formatSalvare != null)
+            {
+                return new AdministrareMasini_FisiereText(numeFisierMasini + "." + formatSalvare);
+            }
+            return null;
+        }
+        public static IStocareInchirieri GetAdministratorStocareInchirieri()
+        {
+            var formatSalvare = ConfigurationManager.AppSettings[FORMAT_SALVARE];
+            var numeFisierInchirieri = ConfigurationManager.AppSettings[NUME_FISIER_INCHIRIERI];
+            if (formatSalvare != null)
+            {
+                return new AdministrareInchirieri_FisiereText(numeFisierInchirieri + "." + formatSalvare);
             }
             return null;
         }
