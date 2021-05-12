@@ -48,7 +48,7 @@ namespace InterfazaUtilizator_WindowsForms
         }
 
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e) // Buton iesire program
         {
             this.Close();
         }
@@ -77,7 +77,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnGit_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Co-mi/InchirieriAuto"); //link catre pagina de git
+            System.Diagnostics.Process.Start("https://github.com/Co-mi/InchirieriAuto"); //link catre pagina de git a proiectului
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -95,6 +95,8 @@ namespace InterfazaUtilizator_WindowsForms
             pnlContinut.Controls["PaginaAcasa"].BringToFront();
             btnAcasa.Enabled = false;
             btnClienti.Enabled = true;
+            btnAngajati.Enabled = true;
+            
         }
 
         private void btnClienti_Click(object sender, EventArgs e)
@@ -107,7 +109,22 @@ namespace InterfazaUtilizator_WindowsForms
             }
             Form1.Instance.PnlContainer.Controls["PaginaClienti"].BringToFront();
             Form1.Instance.ButonAcasa.Enabled = true;
-            btnClienti.Enabled = false;
+            Form1.Instance.btnClienti.Enabled = false;
+            Form1.Instance.btnAngajati.Enabled = true;
+        }
+
+        private void btnAngajati_Click(object sender, EventArgs e)
+        {
+            if(!Form1.Instance.PnlContainer.Controls.ContainsKey("PaginaAngajati"))
+            {
+                PaginaAngajati pa = new PaginaAngajati();
+                pa.Dock = DockStyle.Fill;
+                Form1.Instance.PnlContainer.Controls.Add(pa);
+            }
+            Form1.Instance.PnlContainer.Controls["PaginaAngajati"].BringToFront();
+            Form1.Instance.ButonAcasa.Enabled = true;
+            Form1.Instance.btnAngajati.Enabled = false;
+            Form1.Instance.btnClienti.Enabled = true; ;
         }
     }
 }

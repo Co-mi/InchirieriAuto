@@ -39,6 +39,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnClienti = new System.Windows.Forms.Button();
             this.pctSigla = new System.Windows.Forms.PictureBox();
             this.pnlSus = new System.Windows.Forms.Panel();
+            this.btnGit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitlu = new System.Windows.Forms.Label();
             this.pctIesire = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblAutor = new System.Windows.Forms.Label();
             this.pnlContinut = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnGit = new System.Windows.Forms.Button();
             this.pnlMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSigla)).BeginInit();
             this.pnlSus.SuspendLayout();
@@ -71,6 +71,7 @@ namespace InterfazaUtilizator_WindowsForms
             // 
             // btnInchirieri
             // 
+            this.btnInchirieri.BackColor = System.Drawing.Color.Transparent;
             this.btnInchirieri.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInchirieri.BackgroundImage")));
             this.btnInchirieri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInchirieri.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -83,10 +84,11 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnInchirieri.Size = new System.Drawing.Size(65, 65);
             this.btnInchirieri.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnInchirieri, "Inchirieri");
-            this.btnInchirieri.UseVisualStyleBackColor = true;
+            this.btnInchirieri.UseVisualStyleBackColor = false;
             // 
             // btnAngajati
             // 
+            this.btnAngajati.BackColor = System.Drawing.Color.Transparent;
             this.btnAngajati.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAngajati.BackgroundImage")));
             this.btnAngajati.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAngajati.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -99,7 +101,8 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnAngajati.Size = new System.Drawing.Size(65, 65);
             this.btnAngajati.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnAngajati, "Angajati");
-            this.btnAngajati.UseVisualStyleBackColor = true;
+            this.btnAngajati.UseVisualStyleBackColor = false;
+            this.btnAngajati.Click += new System.EventHandler(this.btnAngajati_Click);
             // 
             // btnAcasa
             // 
@@ -122,6 +125,7 @@ namespace InterfazaUtilizator_WindowsForms
             // 
             // btnMasini
             // 
+            this.btnMasini.BackColor = System.Drawing.Color.Transparent;
             this.btnMasini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMasini.BackgroundImage")));
             this.btnMasini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMasini.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -134,7 +138,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnMasini.Size = new System.Drawing.Size(65, 65);
             this.btnMasini.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnMasini, "Masini");
-            this.btnMasini.UseVisualStyleBackColor = true;
+            this.btnMasini.UseVisualStyleBackColor = false;
             // 
             // btnClienti
             // 
@@ -180,6 +184,21 @@ namespace InterfazaUtilizator_WindowsForms
             this.pnlSus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.pnlSus.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.pnlSus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
+            // 
+            // btnGit
+            // 
+            this.btnGit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGit.BackgroundImage")));
+            this.btnGit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGit.FlatAppearance.BorderSize = 0;
+            this.btnGit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnGit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGit.Location = new System.Drawing.Point(1058, 16);
+            this.btnGit.Name = "btnGit";
+            this.btnGit.Size = new System.Drawing.Size(27, 27);
+            this.btnGit.TabIndex = 7;
+            this.btnGit.UseVisualStyleBackColor = true;
+            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
             // 
             // button1
             // 
@@ -244,21 +263,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.pnlContinut.Name = "pnlContinut";
             this.pnlContinut.Size = new System.Drawing.Size(1136, 551);
             this.pnlContinut.TabIndex = 7;
-            // 
-            // btnGit
-            // 
-            this.btnGit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGit.BackgroundImage")));
-            this.btnGit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGit.FlatAppearance.BorderSize = 0;
-            this.btnGit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnGit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGit.Location = new System.Drawing.Point(1058, 16);
-            this.btnGit.Name = "btnGit";
-            this.btnGit.Size = new System.Drawing.Size(27, 27);
-            this.btnGit.TabIndex = 7;
-            this.btnGit.UseVisualStyleBackColor = true;
-            this.btnGit.Click += new System.EventHandler(this.btnGit_Click);
             // 
             // Form1
             // 

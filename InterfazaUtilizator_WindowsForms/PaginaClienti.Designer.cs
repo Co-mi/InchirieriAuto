@@ -71,11 +71,11 @@ namespace InterfazaUtilizator_WindowsForms
             // lblTitluClient
             // 
             this.lblTitluClient.AutoSize = true;
-            this.lblTitluClient.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitluClient.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitluClient.ForeColor = System.Drawing.Color.White;
             this.lblTitluClient.Location = new System.Drawing.Point(21, 22);
             this.lblTitluClient.Name = "lblTitluClient";
-            this.lblTitluClient.Size = new System.Drawing.Size(187, 30);
+            this.lblTitluClient.Size = new System.Drawing.Size(137, 22);
             this.lblTitluClient.TabIndex = 0;
             this.lblTitluClient.Text = "Meniu - Clienti";
             // 
@@ -115,7 +115,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnAfisare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAfisare.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAfisare.ForeColor = System.Drawing.Color.White;
-            this.btnAfisare.Location = new System.Drawing.Point(118, 224);
+            this.btnAfisare.Location = new System.Drawing.Point(480, 137);
             this.btnAfisare.Margin = new System.Windows.Forms.Padding(4);
             this.btnAfisare.Name = "btnAfisare";
             this.btnAfisare.Size = new System.Drawing.Size(86, 32);
@@ -241,9 +241,9 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAdaugaClient.Controls.Add(this.txtPrenumeClient);
             this.grbAdaugaClient.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAdaugaClient.ForeColor = System.Drawing.Color.White;
-            this.grbAdaugaClient.Location = new System.Drawing.Point(26, 69);
+            this.grbAdaugaClient.Location = new System.Drawing.Point(26, 47);
             this.grbAdaugaClient.Name = "grbAdaugaClient";
-            this.grbAdaugaClient.Size = new System.Drawing.Size(221, 263);
+            this.grbAdaugaClient.Size = new System.Drawing.Size(221, 285);
             this.grbAdaugaClient.TabIndex = 17;
             this.grbAdaugaClient.TabStop = false;
             this.grbAdaugaClient.Text = "Adaugare client";
@@ -262,9 +262,9 @@ namespace InterfazaUtilizator_WindowsForms
             this.rtbAfiseazaClienti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.rtbAfiseazaClienti.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbAfiseazaClienti.ForeColor = System.Drawing.Color.White;
-            this.rtbAfiseazaClienti.Location = new System.Drawing.Point(10, 30);
+            this.rtbAfiseazaClienti.Location = new System.Drawing.Point(10, 20);
             this.rtbAfiseazaClienti.Name = "rtbAfiseazaClienti";
-            this.rtbAfiseazaClienti.Size = new System.Drawing.Size(191, 165);
+            this.rtbAfiseazaClienti.Size = new System.Drawing.Size(556, 110);
             this.rtbAfiseazaClienti.TabIndex = 18;
             this.rtbAfiseazaClienti.Text = "";
             // 
@@ -274,9 +274,9 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAfiseazaClienti.Controls.Add(this.rtbAfiseazaClienti);
             this.grbAfiseazaClienti.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAfiseazaClienti.ForeColor = System.Drawing.Color.White;
-            this.grbAfiseazaClienti.Location = new System.Drawing.Point(253, 69);
+            this.grbAfiseazaClienti.Location = new System.Drawing.Point(253, 47);
             this.grbAfiseazaClienti.Name = "grbAfiseazaClienti";
-            this.grbAfiseazaClienti.Size = new System.Drawing.Size(211, 263);
+            this.grbAfiseazaClienti.Size = new System.Drawing.Size(573, 173);
             this.grbAfiseazaClienti.TabIndex = 19;
             this.grbAfiseazaClienti.TabStop = false;
             this.grbAfiseazaClienti.Text = "Afiseaza clienti";
@@ -364,9 +364,9 @@ namespace InterfazaUtilizator_WindowsForms
             this.grpOptModifClient.Controls.Add(this.txPrenume);
             this.grpOptModifClient.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpOptModifClient.ForeColor = System.Drawing.Color.White;
-            this.grpOptModifClient.Location = new System.Drawing.Point(474, 69);
+            this.grpOptModifClient.Location = new System.Drawing.Point(253, 223);
             this.grpOptModifClient.Name = "grpOptModifClient";
-            this.grpOptModifClient.Size = new System.Drawing.Size(351, 262);
+            this.grpOptModifClient.Size = new System.Drawing.Size(573, 108);
             this.grpOptModifClient.TabIndex = 21;
             this.grpOptModifClient.TabStop = false;
             this.grpOptModifClient.Text = "Optiuni modificare";
@@ -375,7 +375,7 @@ namespace InterfazaUtilizator_WindowsForms
             // 
             this.lblMesaj3.AutoSize = true;
             this.lblMesaj3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMesaj3.Location = new System.Drawing.Point(42, 226);
+            this.lblMesaj3.Location = new System.Drawing.Point(352, 34);
             this.lblMesaj3.Name = "lblMesaj3";
             this.lblMesaj3.Size = new System.Drawing.Size(0, 17);
             this.lblMesaj3.TabIndex = 30;
@@ -396,7 +396,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lbPrenume.AutoSize = true;
             this.lbPrenume.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrenume.ForeColor = System.Drawing.Color.White;
-            this.lbPrenume.Location = new System.Drawing.Point(63, 101);
+            this.lbPrenume.Location = new System.Drawing.Point(190, 73);
             this.lbPrenume.Name = "lbPrenume";
             this.lbPrenume.Size = new System.Drawing.Size(79, 21);
             this.lbPrenume.TabIndex = 17;
@@ -407,7 +407,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.txCNP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txCNP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txCNP.ForeColor = System.Drawing.Color.White;
-            this.txCNP.Location = new System.Drawing.Point(149, 136);
+            this.txCNP.Location = new System.Drawing.Point(447, 73);
             this.txCNP.MaxLength = 13;
             this.txCNP.Name = "txCNP";
             this.txCNP.Size = new System.Drawing.Size(120, 27);
@@ -418,7 +418,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lbNume.AutoSize = true;
             this.lbNume.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNume.ForeColor = System.Drawing.Color.White;
-            this.lbNume.Location = new System.Drawing.Point(63, 70);
+            this.lbNume.Location = new System.Drawing.Point(9, 77);
             this.lbNume.Name = "lbNume";
             this.lbNume.Size = new System.Drawing.Size(57, 21);
             this.lbNume.TabIndex = 18;
@@ -429,7 +429,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.txNume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txNume.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txNume.ForeColor = System.Drawing.Color.White;
-            this.txNume.Location = new System.Drawing.Point(149, 67);
+            this.txNume.Location = new System.Drawing.Point(66, 74);
             this.txNume.MaxLength = 30;
             this.txNume.Name = "txNume";
             this.txNume.Size = new System.Drawing.Size(120, 27);
@@ -440,7 +440,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lbCNP.AutoSize = true;
             this.lbCNP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCNP.ForeColor = System.Drawing.Color.White;
-            this.lbCNP.Location = new System.Drawing.Point(63, 136);
+            this.lbCNP.Location = new System.Drawing.Point(397, 79);
             this.lbCNP.Name = "lbCNP";
             this.lbCNP.Size = new System.Drawing.Size(44, 21);
             this.lbCNP.TabIndex = 21;
@@ -451,7 +451,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.txPrenume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txPrenume.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txPrenume.ForeColor = System.Drawing.Color.White;
-            this.txPrenume.Location = new System.Drawing.Point(149, 102);
+            this.txPrenume.Location = new System.Drawing.Point(271, 74);
             this.txPrenume.MaxLength = 30;
             this.txPrenume.Name = "txPrenume";
             this.txPrenume.Size = new System.Drawing.Size(120, 27);

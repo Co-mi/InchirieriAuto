@@ -59,6 +59,12 @@
     <Compile Include="PaginaAcasa.Designer.cs">
       <DependentUpon>PaginaAcasa.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaAngajati.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PaginaAngajati.Designer.cs">
+      <DependentUpon>PaginaAngajati.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaClienti.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <EmbeddedResource Include="PaginaAcasa.resx">
       <DependentUpon>PaginaAcasa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaginaAngajati.resx">
+      <DependentUpon>PaginaAngajati.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaClienti.resx">
       <DependentUpon>PaginaClienti.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +94,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -112,6 +122,9 @@
       <Project>{4202046b-ca44-4d0f-a395-7c2ffb2b5bc0}</Project>
       <Name>NivelAccesDate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mitsubishi-PNG-Images.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
