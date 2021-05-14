@@ -60,8 +60,10 @@ namespace InterfazaUtilizator_WindowsForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitluAcasa);
+            this.DoubleBuffered = true;
             this.Name = "PaginaAcasa";
             this.Size = new System.Drawing.Size(1015, 480);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

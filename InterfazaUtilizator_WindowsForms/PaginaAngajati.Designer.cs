@@ -204,7 +204,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblPrenumeCautat.AutoSize = true;
             this.lblPrenumeCautat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrenumeCautat.ForeColor = System.Drawing.Color.White;
-            this.lblPrenumeCautat.Location = new System.Drawing.Point(223, 32);
+            this.lblPrenumeCautat.Location = new System.Drawing.Point(208, 32);
             this.lblPrenumeCautat.Name = "lblPrenumeCautat";
             this.lblPrenumeCautat.Size = new System.Drawing.Size(79, 21);
             this.lblPrenumeCautat.TabIndex = 14;
@@ -215,7 +215,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.txtCautarePrenumeAngajat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtCautarePrenumeAngajat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCautarePrenumeAngajat.ForeColor = System.Drawing.Color.White;
-            this.txtCautarePrenumeAngajat.Location = new System.Drawing.Point(308, 29);
+            this.txtCautarePrenumeAngajat.Location = new System.Drawing.Point(293, 29);
             this.txtCautarePrenumeAngajat.MaxLength = 30;
             this.txtCautarePrenumeAngajat.Name = "txtCautarePrenumeAngajat";
             this.txtCautarePrenumeAngajat.Size = new System.Drawing.Size(120, 27);

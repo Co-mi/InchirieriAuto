@@ -47,6 +47,9 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblAutor = new System.Windows.Forms.Label();
             this.pnlContinut = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSigla)).BeginInit();
             this.pnlSus.SuspendLayout();
@@ -139,6 +142,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnMasini.TabIndex = 8;
             this.toolTip1.SetToolTip(this.btnMasini, "Masini");
             this.btnMasini.UseVisualStyleBackColor = false;
+            this.btnMasini.Click += new System.EventHandler(this.btnMasini_Click);
             // 
             // btnClienti
             // 
@@ -239,6 +243,8 @@ namespace InterfazaUtilizator_WindowsForms
             // 
             // pnlJos
             // 
+            this.pnlJos.Controls.Add(this.lblTime);
+            this.pnlJos.Controls.Add(this.lblDate);
             this.pnlJos.Controls.Add(this.lblAutor);
             this.pnlJos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlJos.Location = new System.Drawing.Point(68, 612);
@@ -263,6 +269,29 @@ namespace InterfazaUtilizator_WindowsForms
             this.pnlContinut.Name = "pnlContinut";
             this.pnlContinut.Size = new System.Drawing.Size(1136, 551);
             this.pnlContinut.TabIndex = 7;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(979, 3);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(47, 17);
+            this.lblDate.TabIndex = 1;
+            this.lblDate.Text = "label1";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(6, 3);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(47, 17);
+            this.lblTime.TabIndex = 2;
+            this.lblTime.Text = "label1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -310,6 +339,9 @@ namespace InterfazaUtilizator_WindowsForms
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGit;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

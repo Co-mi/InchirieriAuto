@@ -82,6 +82,9 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+            lblDate.Text = DateTime.Now.ToLongDateString();
             btnAcasa.Enabled = false;
             _obj = this;
 
@@ -96,6 +99,7 @@ namespace InterfazaUtilizator_WindowsForms
             btnAcasa.Enabled = false;
             btnClienti.Enabled = true;
             btnAngajati.Enabled = true;
+            btnMasini.Enabled = true;
             
         }
 
@@ -111,6 +115,7 @@ namespace InterfazaUtilizator_WindowsForms
             Form1.Instance.ButonAcasa.Enabled = true;
             Form1.Instance.btnClienti.Enabled = false;
             Form1.Instance.btnAngajati.Enabled = true;
+            Form1.Instance.btnMasini.Enabled = true;
         }
 
         private void btnAngajati_Click(object sender, EventArgs e)
@@ -124,7 +129,29 @@ namespace InterfazaUtilizator_WindowsForms
             Form1.Instance.PnlContainer.Controls["PaginaAngajati"].BringToFront();
             Form1.Instance.ButonAcasa.Enabled = true;
             Form1.Instance.btnAngajati.Enabled = false;
-            Form1.Instance.btnClienti.Enabled = true; ;
+            Form1.Instance.btnClienti.Enabled = true;
+            Form1.Instance.btnMasini.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
+
+        private void btnMasini_Click(object sender, EventArgs e)
+        {
+            if (!Form1.Instance.PnlContainer.Controls.ContainsKey("PaginaMasini"))
+            {
+                PaginaMasini pm = new PaginaMasini();
+                pm.Dock = DockStyle.Fill;
+                Form1.Instance.PnlContainer.Controls.Add(pm);
+            }
+            Form1.Instance.PnlContainer.Controls["PaginaMasini"].BringToFront();
+            Form1.Instance.ButonAcasa.Enabled = true;
+            Form1.Instance.btnClienti.Enabled = true;
+            Form1.Instance.btnAngajati.Enabled = true;
+            Form1.Instance.btnMasini.Enabled = false;
         }
     }
 }

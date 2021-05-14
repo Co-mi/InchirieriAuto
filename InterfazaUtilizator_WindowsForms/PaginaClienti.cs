@@ -26,10 +26,12 @@ namespace InterfazaUtilizator_WindowsForms
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
             string numeComplet;
+            lblMesaj.ForeColor = Color.Red;
             if (txtNumeClient.Text == "" || txtPrenumeClient.Text == "" || txtCNPClient.Text == "" || txtIDClient.Text =="")
-                lblMesaj.Text = "Completati toate campurile!";
+                lblMesaj.Text = "*completati toate campurile!";
             else
-            { 
+            {
+                lblMesaj.ForeColor = Color.Green;
             numeComplet = txtNumeClient.Text + "," + txtPrenumeClient.Text + "," + txtCNPClient.Text + "," + int.Parse(txtIDClient.Text);  
                 Client _client = new Client(numeComplet);
                 lblMesaj.Text = "Adaugare realizata cu succes!";
@@ -54,16 +56,25 @@ namespace InterfazaUtilizator_WindowsForms
         private void btnCautare_Click(object sender, EventArgs e)
         {
             Client client_cautat;
+            lblMesaj2.ForeColor = Color.Red;
             if (txtCautareNumeClient.Text == "" || txtCautarePrenumeClient.Text == "")
-                lblMesaj2.Text = "Completati toate campurile!";
+            {
+                lblMesaj2.ForeColor = Color.Red;
+                lblMesaj2.Text = "*completati toate campurile!";
+            }
             else
             {
+                
                 client_cautat = adminClienti.GetClient(txtCautareNumeClient.Text, txtCautarePrenumeClient.Text);
                 if (client_cautat == null)
+                {
+                    lblMesaj2.ForeColor = Color.White;
                     lblMesaj2.Text = "Clientul nu a fost gasit!";
+                }
                 else
                 {
                     rtbAfiseazaClienti.Clear();
+                    lblMesaj2.ForeColor = Color.Green;
                     lblMesaj2.Text = "Clientul a fost gasit!";
                     rtbAfiseazaClienti.AppendText(client_cautat.ConversieLaSir());
                 }
@@ -72,14 +83,23 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnModificare_Click(object sender, EventArgs e)
         {
+            //lblMesaj2.ForeColor = Color.Green;
             Client client_cautat;
+
             if (txtCautareNumeClient.Text == "" || txtCautarePrenumeClient.Text == "")
-                lblMesaj2.Text = "Completati toate campurile!";
+            {
+                lblMesaj2.ForeColor = Color.Red;
+                lblMesaj2.Text = "*completati toate campurile!";
+            }
             else
             {
+
                 client_cautat = adminClienti.GetClient(txtCautareNumeClient.Text, txtCautarePrenumeClient.Text);
                 if (client_cautat == null)
+                {
+                    lblMesaj2.ForeColor = Color.White;
                     lblMesaj2.Text = "Clientul nu a fost gasit!";
+                }
                 else
                 {
                     int i = 0;
@@ -96,14 +116,19 @@ namespace InterfazaUtilizator_WindowsForms
                         clienti[i].CNP = txCNP.Text;
 
                     if (txNume.Text == "" && txPrenume.Text == "" && txCNP.Text == "")
-                        lblMesaj3.Text = "Nu au fost date introduse!";
+                    {
+                        lblMesaj3.ForeColor = Color.Red;
+                        lblMesaj3.Text = "*nu au fost date introduse!";
+                    }
                     else
                     {
                         adminClienti.UpdateFisierClienti(clienti);
+                        lblMesaj3.ForeColor = Color.Green;
                         lblMesaj3.Text = "Modificare realizata cu succes!";
                     }
                 }
             }
+            
         }
     }
 }

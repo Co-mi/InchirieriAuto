@@ -71,6 +71,12 @@
     <Compile Include="PaginaClienti.Designer.cs">
       <DependentUpon>PaginaClienti.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaginaMasini.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PaginaMasini.Designer.cs">
+      <DependentUpon>PaginaMasini.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StocareFactory.cs" />
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaClienti.resx">
       <DependentUpon>PaginaClienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaMasini.resx">
+      <DependentUpon>PaginaMasini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

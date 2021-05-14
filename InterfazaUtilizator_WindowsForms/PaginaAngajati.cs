@@ -26,11 +26,15 @@ namespace InterfazaUtilizator_WindowsForms
         {
             string numeComplet;
             if (txtNumeAngajat.Text == "" || txtPrenumeAngajat.Text == "" || txtCNPAngajat.Text == "" || txtFunctieAngajat.Text == "")
-                lblMesaj.Text = "Completati toate campurile!";
+            {
+                lblMesaj.ForeColor = Color.Red;
+                lblMesaj.Text = "*completati toate campurile!";
+            }
             else
             {
-                numeComplet = txtNumeAngajat.Text + "," + txtPrenumeAngajat.Text + "," + txtCNPAngajat.Text + "," +txtFunctieAngajat.Text;
+                numeComplet = txtNumeAngajat.Text + "," + txtPrenumeAngajat.Text + "," + txtCNPAngajat.Text + "," + txtFunctieAngajat.Text;
                 Angajat _angajat = new Angajat(numeComplet);
+                lblMesaj.ForeColor = Color.Green;
                 lblMesaj.Text = "Adaugare realizata cu succes!";
                 angajati.Add(_angajat);
                 //Adaugare client in fisier
@@ -42,7 +46,7 @@ namespace InterfazaUtilizator_WindowsForms
         {
             rtbAfiseazaAngajati.Clear();
             //parcurgere colectie de obiecte 'Clienti'
-            foreach (Angajat a in adminAngajati.GetAngajati())
+            foreach (Angajat a in angajati)
             {
                 rtbAfiseazaAngajati.AppendText(a.ConversieLaSir() + "\n");
                 rtbAfiseazaAngajati.AppendText(Environment.NewLine);
@@ -53,15 +57,22 @@ namespace InterfazaUtilizator_WindowsForms
         {
             Angajat angajat_cautat;
             if (txtCautareNumeAngajat.Text == "" || txtCautarePrenumeAngajat.Text == "")
-                lblMesaj2.Text = "Completati toate campurile!";
+            {
+                lblMesaj2.ForeColor = Color.Red;
+                lblMesaj2.Text = "*completati toate campurile!";
+            }
             else
             {
                 angajat_cautat = adminAngajati.GetAngajat(txtCautareNumeAngajat.Text, txtCautarePrenumeAngajat.Text);
                 if (angajat_cautat == null)
+                {
+                    lblMesaj2.ForeColor = Color.White;
                     lblMesaj2.Text = "Angajatul nu a fost gasit!";
+                }
                 else
                 {
                     rtbAfiseazaAngajati.Clear();
+                    lblMesaj2.ForeColor = Color.Green;
                     lblMesaj2.Text = "Angajatul a fost gasit!";
                     rtbAfiseazaAngajati.AppendText(angajat_cautat.ConversieLaSir());
                 }
@@ -72,36 +83,46 @@ namespace InterfazaUtilizator_WindowsForms
         {
             Angajat angajat_cautat;
             if (txtCautareNumeAngajat.Text == "" || txtCautarePrenumeAngajat.Text == "")
-                lblMesaj2.Text = "Completati toate campurile!";
+            {
+                lblMesaj2.ForeColor = Color.Red;
+                lblMesaj2.Text = "*completati toate campurile!";
+            }
             else
             {
                 angajat_cautat = adminAngajati.GetAngajat(txtCautareNumeAngajat.Text, txtCautarePrenumeAngajat.Text);
                 if (angajat_cautat == null)
+                {
+                    lblMesaj2.ForeColor = Color.White;
                     lblMesaj2.Text = "Angajatul nu a fost gasit!";
-                else
-            {
-                int i = 0;
-                while (angajati[i].CNP != angajat_cautat.CNP)
-                {
-                    i++;
                 }
-
-                if (txNume.Text != "")
-                    angajati[i].Nume = txNume.Text;
-                if (txPrenume.Text != "")
-                    angajati[i].Prenume = txPrenume.Text;
-                if (txCNP.Text != "")
-                    angajati[i].CNP = txCNP.Text;
-
-                if (txNume.Text == "" && txPrenume.Text == "" && txCNP.Text == "")
-                    lblMesaj3.Text = "Nu au fost date introduse!";
                 else
                 {
-                    adminAngajati.UpdateFisierAngajati(angajati);
-                    lblMesaj3.Text = "Modificare realizata cu succes!";
+                    int i = 0;
+                    while (angajati[i].CNP != angajat_cautat.CNP)
+                    {
+                        i++;
+                    }
+
+                    if (txNume.Text != "")
+                        angajati[i].Nume = txNume.Text;
+                    if (txPrenume.Text != "")
+                        angajati[i].Prenume = txPrenume.Text;
+                    if (txCNP.Text != "")
+                        angajati[i].CNP = txCNP.Text;
+
+                    if (txNume.Text == "" && txPrenume.Text == "" && txCNP.Text == "")
+                    {
+                        lblMesaj3.ForeColor = Color.Red;
+                        lblMesaj3.Text = "*nu au fost date introduse!";
+                    }
+                    else
+                    {
+                        adminAngajati.UpdateFisierAngajati(angajati);
+                        lblMesaj3.ForeColor = Color.Green;
+                        lblMesaj3.Text = "Modificare realizata cu succes!";
+                    }
                 }
             }
-        }
     }
     }
 }

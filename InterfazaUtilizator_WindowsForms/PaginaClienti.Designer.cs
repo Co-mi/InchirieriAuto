@@ -303,7 +303,7 @@ namespace InterfazaUtilizator_WindowsForms
             // 
             this.lblMesaj2.AutoSize = true;
             this.lblMesaj2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMesaj2.Location = new System.Drawing.Point(624, 31);
+            this.lblMesaj2.Location = new System.Drawing.Point(625, 31);
             this.lblMesaj2.Name = "lblMesaj2";
             this.lblMesaj2.Size = new System.Drawing.Size(0, 17);
             this.lblMesaj2.TabIndex = 16;
@@ -313,7 +313,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblPrenumeCautat.AutoSize = true;
             this.lblPrenumeCautat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrenumeCautat.ForeColor = System.Drawing.Color.White;
-            this.lblPrenumeCautat.Location = new System.Drawing.Point(223, 32);
+            this.lblPrenumeCautat.Location = new System.Drawing.Point(208, 31);
             this.lblPrenumeCautat.Name = "lblPrenumeCautat";
             this.lblPrenumeCautat.Size = new System.Drawing.Size(79, 21);
             this.lblPrenumeCautat.TabIndex = 14;
@@ -324,7 +324,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.txtCautarePrenumeClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtCautarePrenumeClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCautarePrenumeClient.ForeColor = System.Drawing.Color.White;
-            this.txtCautarePrenumeClient.Location = new System.Drawing.Point(308, 29);
+            this.txtCautarePrenumeClient.Location = new System.Drawing.Point(293, 29);
             this.txtCautarePrenumeClient.MaxLength = 30;
             this.txtCautarePrenumeClient.Name = "txtCautarePrenumeClient";
             this.txtCautarePrenumeClient.Size = new System.Drawing.Size(120, 27);
