@@ -20,11 +20,12 @@ namespace InterfazaUtilizator_WindowsForms
         {
             InitializeComponent();
             clienti = adminClienti.GetClienti();
-
+        
         }
 
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             string numeComplet;
             lblMesaj.ForeColor = Color.Red;
             if (txtNumeClient.Text == "" || txtPrenumeClient.Text == "" || txtCNPClient.Text == "" || txtIDClient.Text =="")
@@ -44,6 +45,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnAfisare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             rtbAfiseazaClienti.Clear();
             //parcurgere colectie de obiecte 'Clienti'
             foreach (Client c in adminClienti.GetClienti())
@@ -55,6 +57,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnCautare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             Client client_cautat;
             lblMesaj2.ForeColor = Color.Red;
             if (txtCautareNumeClient.Text == "" || txtCautarePrenumeClient.Text == "")
@@ -83,7 +86,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnModificare_Click(object sender, EventArgs e)
         {
-            //lblMesaj2.ForeColor = Color.Green;
+            ResetareMesaje();
             Client client_cautat;
 
             if (txtCautareNumeClient.Text == "" || txtCautarePrenumeClient.Text == "")
@@ -129,6 +132,12 @@ namespace InterfazaUtilizator_WindowsForms
                 }
             }
             
+        }
+
+        public void ResetareMesaje()
+        {
+            lblMesaj.Text = lblMesaj2.Text = lblMesaj3.Text = string.Empty; 
+
         }
     }
 }

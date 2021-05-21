@@ -21,7 +21,7 @@ namespace LibrarieModele
         {
             string[] _date = data.Split(',');
             string[] _Date = _date[3].Split('-');
-
+            
             ID_Inchirieri = new int[_Date.Length];
             for (int i = 0; i < ID_Inchirieri.Length; i++)
             {

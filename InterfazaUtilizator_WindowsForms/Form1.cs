@@ -99,6 +99,7 @@ namespace InterfazaUtilizator_WindowsForms
             btnAcasa.Enabled = false;
             btnClienti.Enabled = true;
             btnAngajati.Enabled = true;
+            btnInchirieri.Enabled = true;
             btnMasini.Enabled = true;
             
         }
@@ -115,6 +116,7 @@ namespace InterfazaUtilizator_WindowsForms
             Form1.Instance.ButonAcasa.Enabled = true;
             Form1.Instance.btnClienti.Enabled = false;
             Form1.Instance.btnAngajati.Enabled = true;
+            Form1.Instance.btnInchirieri.Enabled = true;
             Form1.Instance.btnMasini.Enabled = true;
         }
 
@@ -131,6 +133,7 @@ namespace InterfazaUtilizator_WindowsForms
             Form1.Instance.btnAngajati.Enabled = false;
             Form1.Instance.btnClienti.Enabled = true;
             Form1.Instance.btnMasini.Enabled = true;
+            Form1.Instance.btnInchirieri.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -151,7 +154,24 @@ namespace InterfazaUtilizator_WindowsForms
             Form1.Instance.ButonAcasa.Enabled = true;
             Form1.Instance.btnClienti.Enabled = true;
             Form1.Instance.btnAngajati.Enabled = true;
+            Form1.Instance.btnInchirieri.Enabled = true;
             Form1.Instance.btnMasini.Enabled = false;
+        }
+
+        private void btnInchirieri_Click(object sender, EventArgs e)
+        {
+            if (!Form1.Instance.PnlContainer.Controls.ContainsKey("PaginaInchirieri"))
+            {
+                PaginaInchirieri pi = new PaginaInchirieri();
+                pi.Dock = DockStyle.Fill;
+                Form1.Instance.PnlContainer.Controls.Add(pi);
+            }
+            Form1.Instance.PnlContainer.Controls["PaginaInchirieri"].BringToFront();
+            Form1.Instance.ButonAcasa.Enabled = true;
+            Form1.Instance.btnClienti.Enabled = true;
+            Form1.Instance.btnAngajati.Enabled = true;
+            Form1.Instance.btnMasini.Enabled = true;
+            Form1.Instance.btnInchirieri.Enabled = false;
         }
     }
 }

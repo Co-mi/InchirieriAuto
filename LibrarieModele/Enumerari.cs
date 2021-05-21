@@ -26,7 +26,7 @@ namespace LibrarieModele
         aer_conditionat = 1,
         navigatie = 2,
         cutie_automata = 4,
-        geamuri_elctrice = 8,
+        geamuri_electrice = 8,
         decapotabila = 16
     };
     

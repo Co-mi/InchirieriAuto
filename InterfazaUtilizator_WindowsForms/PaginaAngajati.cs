@@ -24,6 +24,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             string numeComplet;
             if (txtNumeAngajat.Text == "" || txtPrenumeAngajat.Text == "" || txtCNPAngajat.Text == "" || txtFunctieAngajat.Text == "")
             {
@@ -44,6 +45,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnAfisare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             rtbAfiseazaAngajati.Clear();
             //parcurgere colectie de obiecte 'Clienti'
             foreach (Angajat a in angajati)
@@ -55,6 +57,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnCautare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             Angajat angajat_cautat;
             if (txtCautareNumeAngajat.Text == "" || txtCautarePrenumeAngajat.Text == "")
             {
@@ -81,6 +84,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnModificare_Click(object sender, EventArgs e)
         {
+            ResetareMesaje();
             Angajat angajat_cautat;
             if (txtCautareNumeAngajat.Text == "" || txtCautarePrenumeAngajat.Text == "")
             {
@@ -123,6 +127,12 @@ namespace InterfazaUtilizator_WindowsForms
                     }
                 }
             }
-    }
+        }
+
+        public void ResetareMesaje()
+        {
+            lblMesaj.Text = lblMesaj2.Text = lblMesaj3.Text = string.Empty;
+
+        }
     }
 }

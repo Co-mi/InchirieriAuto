@@ -38,7 +38,7 @@ namespace LibrarieModele
 
         public string ConversieLaSir()
         {
-            string dateForDisplay = $"Model: {Model}\nSerie: {Serie}\nPret inchiriere: {Pret}\nOptiuni: {Optiuni}";
+            string dateForDisplay = string.Format("{0,-13}{1,-20}{2,5}   {3,-30}\n", Model,Serie.ToUpper(),Pret.ToString(), Optiuni.ToString());
             return dateForDisplay;
         }
         public string ConversieLaSir_PentruScriereInFisier()

@@ -44,11 +44,11 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblTitlu = new System.Windows.Forms.Label();
             this.pctIesire = new System.Windows.Forms.PictureBox();
             this.pnlJos = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.lblAutor = new System.Windows.Forms.Label();
             this.pnlContinut = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSigla)).BeginInit();
@@ -88,6 +88,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnInchirieri.TabIndex = 10;
             this.toolTip1.SetToolTip(this.btnInchirieri, "Inchirieri");
             this.btnInchirieri.UseVisualStyleBackColor = false;
+            this.btnInchirieri.Click += new System.EventHandler(this.btnInchirieri_Click);
             // 
             // btnAngajati
             // 
@@ -110,7 +111,7 @@ namespace InterfazaUtilizator_WindowsForms
             // btnAcasa
             // 
             this.btnAcasa.BackColor = System.Drawing.Color.Transparent;
-            this.btnAcasa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAcasa.BackgroundImage")));
+            this.btnAcasa.BackgroundImage = global::InterfazaUtilizator_WindowsForms.Properties.Resources.home;
             this.btnAcasa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAcasa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAcasa.FlatAppearance.BorderSize = 0;
@@ -252,6 +253,24 @@ namespace InterfazaUtilizator_WindowsForms
             this.pnlJos.Size = new System.Drawing.Size(1136, 26);
             this.pnlJos.TabIndex = 6;
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(6, 3);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(47, 17);
+            this.lblTime.TabIndex = 2;
+            this.lblTime.Text = "label1";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(963, 3);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(47, 17);
+            this.lblDate.TabIndex = 1;
+            this.lblDate.Text = "label1";
+            // 
             // lblAutor
             // 
             this.lblAutor.AutoSize = true;
@@ -269,24 +288,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.pnlContinut.Name = "pnlContinut";
             this.pnlContinut.Size = new System.Drawing.Size(1136, 551);
             this.pnlContinut.TabIndex = 7;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(979, 3);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(47, 17);
-            this.lblDate.TabIndex = 1;
-            this.lblDate.Text = "label1";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(6, 3);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(47, 17);
-            this.lblTime.TabIndex = 2;
-            this.lblTime.Text = "label1";
             // 
             // timer1
             // 

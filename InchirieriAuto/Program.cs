@@ -227,7 +227,7 @@ namespace InterfataUtilizator_Consola
                     Console.WriteLine("Introdu noul CNP: ");
                     clienti[i].CNP = Console.ReadLine();
                 }
-                admminClienti.UpdateFisierClienti(clienti);
+                //admminClienti.UpdateFisierClienti(clienti);
                 Console.WriteLine("Modificare realizata cu succes!");
             }
         }
