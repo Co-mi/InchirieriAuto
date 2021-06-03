@@ -36,6 +36,7 @@ namespace NivelAccesDate
             {
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisierAngajati, true))
                 {
+                    angajat.dataActulalizare = DateTime.Now;
                     swFisierText.WriteLine(angajat.ConversieLaSir_PentruScriereInFisier());
                 }
             }

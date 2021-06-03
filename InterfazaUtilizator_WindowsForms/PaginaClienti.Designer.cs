@@ -29,6 +29,9 @@ namespace InterfazaUtilizator_WindowsForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitluClient = new System.Windows.Forms.Label();
             this.btnAdaugare = new System.Windows.Forms.Button();
             this.btnModificare = new System.Windows.Forms.Button();
@@ -39,13 +42,12 @@ namespace InterfazaUtilizator_WindowsForms
             this.txtNumeClient = new System.Windows.Forms.TextBox();
             this.txtPrenumeClient = new System.Windows.Forms.TextBox();
             this.lblCNPClient = new System.Windows.Forms.Label();
-            this.lblIDClient = new System.Windows.Forms.Label();
             this.txtCNPClient = new System.Windows.Forms.TextBox();
-            this.txtIDClient = new System.Windows.Forms.TextBox();
             this.grbAdaugaClient = new System.Windows.Forms.GroupBox();
             this.lblMesaj = new System.Windows.Forms.Label();
-            this.rtbAfiseazaClienti = new System.Windows.Forms.RichTextBox();
             this.grbAfiseazaClienti = new System.Windows.Forms.GroupBox();
+            this.btnStergere = new System.Windows.Forms.Button();
+            this.dgvClienti = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grbCautareClient = new System.Windows.Forms.GroupBox();
             this.lblMesaj2 = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.txPrenume = new System.Windows.Forms.TextBox();
             this.grbAdaugaClient.SuspendLayout();
             this.grbAfiseazaClienti.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClienti)).BeginInit();
             this.grbCautareClient.SuspendLayout();
             this.grpOptModifClient.SuspendLayout();
             this.SuspendLayout();
@@ -194,17 +197,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblCNPClient.TabIndex = 13;
             this.lblCNPClient.Text = "CNP";
             // 
-            // lblIDClient
-            // 
-            this.lblIDClient.AutoSize = true;
-            this.lblIDClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDClient.ForeColor = System.Drawing.Color.White;
-            this.lblIDClient.Location = new System.Drawing.Point(8, 168);
-            this.lblIDClient.Name = "lblIDClient";
-            this.lblIDClient.Size = new System.Drawing.Size(27, 21);
-            this.lblIDClient.TabIndex = 14;
-            this.lblIDClient.Text = "ID";
-            // 
             // txtCNPClient
             // 
             this.txtCNPClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -216,26 +208,13 @@ namespace InterfazaUtilizator_WindowsForms
             this.txtCNPClient.Size = new System.Drawing.Size(120, 27);
             this.txtCNPClient.TabIndex = 15;
             // 
-            // txtIDClient
-            // 
-            this.txtIDClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtIDClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDClient.ForeColor = System.Drawing.Color.White;
-            this.txtIDClient.Location = new System.Drawing.Point(94, 165);
-            this.txtIDClient.MaxLength = 8;
-            this.txtIDClient.Name = "txtIDClient";
-            this.txtIDClient.Size = new System.Drawing.Size(120, 27);
-            this.txtIDClient.TabIndex = 16;
-            // 
             // grbAdaugaClient
             // 
             this.grbAdaugaClient.Controls.Add(this.lblMesaj);
             this.grbAdaugaClient.Controls.Add(this.btnAdaugare);
-            this.grbAdaugaClient.Controls.Add(this.txtIDClient);
             this.grbAdaugaClient.Controls.Add(this.lblPrenumeClient);
             this.grbAdaugaClient.Controls.Add(this.txtCNPClient);
             this.grbAdaugaClient.Controls.Add(this.lblNumeClient);
-            this.grbAdaugaClient.Controls.Add(this.lblIDClient);
             this.grbAdaugaClient.Controls.Add(this.txtNumeClient);
             this.grbAdaugaClient.Controls.Add(this.lblCNPClient);
             this.grbAdaugaClient.Controls.Add(this.txtPrenumeClient);
@@ -257,21 +236,11 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblMesaj.Size = new System.Drawing.Size(0, 17);
             this.lblMesaj.TabIndex = 18;
             // 
-            // rtbAfiseazaClienti
-            // 
-            this.rtbAfiseazaClienti.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rtbAfiseazaClienti.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbAfiseazaClienti.ForeColor = System.Drawing.Color.White;
-            this.rtbAfiseazaClienti.Location = new System.Drawing.Point(10, 20);
-            this.rtbAfiseazaClienti.Name = "rtbAfiseazaClienti";
-            this.rtbAfiseazaClienti.Size = new System.Drawing.Size(556, 110);
-            this.rtbAfiseazaClienti.TabIndex = 18;
-            this.rtbAfiseazaClienti.Text = "";
-            // 
             // grbAfiseazaClienti
             // 
+            this.grbAfiseazaClienti.Controls.Add(this.btnStergere);
+            this.grbAfiseazaClienti.Controls.Add(this.dgvClienti);
             this.grbAfiseazaClienti.Controls.Add(this.btnAfisare);
-            this.grbAfiseazaClienti.Controls.Add(this.rtbAfiseazaClienti);
             this.grbAfiseazaClienti.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAfiseazaClienti.ForeColor = System.Drawing.Color.White;
             this.grbAfiseazaClienti.Location = new System.Drawing.Point(253, 47);
@@ -280,6 +249,55 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAfiseazaClienti.TabIndex = 19;
             this.grbAfiseazaClienti.TabStop = false;
             this.grbAfiseazaClienti.Text = "Afiseaza clienti";
+            // 
+            // btnStergere
+            // 
+            this.btnStergere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStergere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStergere.ForeColor = System.Drawing.Color.White;
+            this.btnStergere.Location = new System.Drawing.Point(7, 135);
+            this.btnStergere.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStergere.Name = "btnStergere";
+            this.btnStergere.Size = new System.Drawing.Size(86, 32);
+            this.btnStergere.TabIndex = 8;
+            this.btnStergere.Text = "Sterge";
+            this.btnStergere.UseVisualStyleBackColor = false;
+            this.btnStergere.Click += new System.EventHandler(this.btnStergere_Click);
+            // 
+            // dgvClienti
+            // 
+            this.dgvClienti.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClienti.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClienti.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvClienti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClienti.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClienti.Location = new System.Drawing.Point(6, 28);
+            this.dgvClienti.Name = "dgvClienti";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClienti.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvClienti.Size = new System.Drawing.Size(560, 100);
+            this.dgvClienti.TabIndex = 7;
             // 
             // grbCautareClient
             // 
@@ -472,6 +490,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAdaugaClient.ResumeLayout(false);
             this.grbAdaugaClient.PerformLayout();
             this.grbAfiseazaClienti.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClienti)).EndInit();
             this.grbCautareClient.ResumeLayout(false);
             this.grbCautareClient.PerformLayout();
             this.grpOptModifClient.ResumeLayout(false);
@@ -493,12 +512,9 @@ namespace InterfazaUtilizator_WindowsForms
         private System.Windows.Forms.TextBox txtNumeClient;
         private System.Windows.Forms.TextBox txtPrenumeClient;
         private System.Windows.Forms.Label lblCNPClient;
-        private System.Windows.Forms.Label lblIDClient;
         private System.Windows.Forms.TextBox txtCNPClient;
-        private System.Windows.Forms.TextBox txtIDClient;
         private System.Windows.Forms.GroupBox grbAdaugaClient;
         private System.Windows.Forms.Label lblMesaj;
-        private System.Windows.Forms.RichTextBox rtbAfiseazaClienti;
         private System.Windows.Forms.GroupBox grbAfiseazaClienti;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox grbCautareClient;
@@ -516,5 +532,7 @@ namespace InterfazaUtilizator_WindowsForms
         private System.Windows.Forms.TextBox txPrenume;
         private System.Windows.Forms.Label lblInstr;
         private System.Windows.Forms.Label lblMesaj3;
+        private System.Windows.Forms.DataGridView dgvClienti;
+        private System.Windows.Forms.Button btnStergere;
     }
 }

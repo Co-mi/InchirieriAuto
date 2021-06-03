@@ -9,6 +9,8 @@ namespace NivelAccesDate
     //clasa AdministrareStudenti_FisierText implementeaza interfata IStocareData
     public class AdministrareInchirieri_FisiereText : IStocareInchirieri
     {
+        private const int ID_PRIMA_INCHIRIERE = 1;
+        private const int INCREMENT = 1;
         string NumeFisierInchirieri { get; set; }
 
         public AdministrareInchirieri_FisiereText(string numeFisierInchirieri)
@@ -26,6 +28,7 @@ namespace NivelAccesDate
         #region Inchiriere
         public void AddInchiriere(Inchiriere inchiriere)
         {
+            inchiriere.ID_inchiriere = GetId();
             try
             {
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisierInchirieri, true))
@@ -125,5 +128,39 @@ namespace NivelAccesDate
             return null;
         }
         #endregion
+
+        private int GetId()
+        {
+            int IdInchiriere = ID_PRIMA_INCHIRIERE;
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisierInchirieri))
+                {
+                    string LinieDinFisier;
+                    Inchiriere ultimaInchiriereDinFisier = null;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((LinieDinFisier = sr.ReadLine()) != null)
+                    {
+                        ultimaInchiriereDinFisier = new Inchiriere(LinieDinFisier);
+                    }
+
+                    if (ultimaInchiriereDinFisier != null)
+                    {
+                        IdInchiriere = ultimaInchiriereDinFisier.ID_inchiriere + INCREMENT;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return IdInchiriere;
+        }
     }
 }

@@ -9,6 +9,8 @@ namespace NivelAccesDate
     //clasa AdministrareStudenti_FisierText implementeaza interfata IStocareData
     public class AdministrareClienti_FisiereText : IStocareClienti
     {
+        private const int ID_PRIMUL_CLIENT = 1;
+        private const int INCREMENT = 1;
         string NumeFisierClienti { get; set; }
      
 
@@ -26,6 +28,7 @@ namespace NivelAccesDate
         #region Client
         public void AddClient(Client client)
         {
+            client.ID_Client = GetId();
             try
             {
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisierClienti, true))
@@ -125,7 +128,40 @@ namespace NivelAccesDate
             return null;
         }
         #endregion
-        
-       
+
+        private int GetId()
+        {
+            int IdClient = ID_PRIMUL_CLIENT;
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisierClienti))
+                {
+                    string LinieDinFisier;
+                    Client ultimulClientDinFisier = null;
+
+                  
+                    while ((LinieDinFisier = sr.ReadLine()) != null)
+                    {
+                        ultimulClientDinFisier = new Client(LinieDinFisier);
+                    }
+
+                    if (ultimulClientDinFisier != null)
+                    {
+                        IdClient = ultimulClientDinFisier.ID_Client + INCREMENT;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return IdClient;
+        }
+
     }
 }

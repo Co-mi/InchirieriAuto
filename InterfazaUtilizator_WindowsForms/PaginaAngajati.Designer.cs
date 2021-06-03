@@ -29,6 +29,9 @@ namespace InterfazaUtilizator_WindowsForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpOptModifClient = new System.Windows.Forms.GroupBox();
             this.lblMesaj3 = new System.Windows.Forms.Label();
             this.lblInstr = new System.Windows.Forms.Label();
@@ -47,12 +50,13 @@ namespace InterfazaUtilizator_WindowsForms
             this.txtCautareNumeAngajat = new System.Windows.Forms.TextBox();
             this.btnCautare = new System.Windows.Forms.Button();
             this.grbAfiseazaAngajati = new System.Windows.Forms.GroupBox();
+            this.btnStergere = new System.Windows.Forms.Button();
+            this.dgvAngajati = new System.Windows.Forms.DataGridView();
             this.btnAfisare = new System.Windows.Forms.Button();
-            this.rtbAfiseazaAngajati = new System.Windows.Forms.RichTextBox();
             this.grbAdaugaAngajat = new System.Windows.Forms.GroupBox();
+            this.cbxFunctie = new System.Windows.Forms.ComboBox();
             this.lblMesaj = new System.Windows.Forms.Label();
             this.btnAdaugare = new System.Windows.Forms.Button();
-            this.txtFunctieAngajat = new System.Windows.Forms.TextBox();
             this.lblPrenumeAngaajt = new System.Windows.Forms.Label();
             this.txtCNPAngajat = new System.Windows.Forms.TextBox();
             this.lblNumeAngajat = new System.Windows.Forms.Label();
@@ -64,6 +68,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.grpOptModifClient.SuspendLayout();
             this.grbCautareClient.SuspendLayout();
             this.grbAfiseazaAngajati.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAngajati)).BeginInit();
             this.grbAdaugaAngajat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -275,8 +280,9 @@ namespace InterfazaUtilizator_WindowsForms
             // 
             // grbAfiseazaAngajati
             // 
+            this.grbAfiseazaAngajati.Controls.Add(this.btnStergere);
+            this.grbAfiseazaAngajati.Controls.Add(this.dgvAngajati);
             this.grbAfiseazaAngajati.Controls.Add(this.btnAfisare);
-            this.grbAfiseazaAngajati.Controls.Add(this.rtbAfiseazaAngajati);
             this.grbAfiseazaAngajati.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAfiseazaAngajati.ForeColor = System.Drawing.Color.White;
             this.grbAfiseazaAngajati.Location = new System.Drawing.Point(253, 47);
@@ -285,6 +291,55 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAfiseazaAngajati.TabIndex = 24;
             this.grbAfiseazaAngajati.TabStop = false;
             this.grbAfiseazaAngajati.Text = "Afiseaza angajati";
+            // 
+            // btnStergere
+            // 
+            this.btnStergere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStergere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStergere.ForeColor = System.Drawing.Color.White;
+            this.btnStergere.Location = new System.Drawing.Point(6, 136);
+            this.btnStergere.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStergere.Name = "btnStergere";
+            this.btnStergere.Size = new System.Drawing.Size(86, 32);
+            this.btnStergere.TabIndex = 8;
+            this.btnStergere.Text = "Sterge";
+            this.btnStergere.UseVisualStyleBackColor = false;
+            this.btnStergere.Click += new System.EventHandler(this.btnStergere_Click);
+            // 
+            // dgvAngajati
+            // 
+            this.dgvAngajati.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAngajati.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAngajati.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAngajati.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAngajati.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAngajati.Location = new System.Drawing.Point(6, 30);
+            this.dgvAngajati.Name = "dgvAngajati";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAngajati.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAngajati.Size = new System.Drawing.Size(560, 100);
+            this.dgvAngajati.TabIndex = 6;
             // 
             // btnAfisare
             // 
@@ -301,22 +356,11 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnAfisare.UseVisualStyleBackColor = false;
             this.btnAfisare.Click += new System.EventHandler(this.btnAfisare_Click);
             // 
-            // rtbAfiseazaAngajati
-            // 
-            this.rtbAfiseazaAngajati.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rtbAfiseazaAngajati.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbAfiseazaAngajati.ForeColor = System.Drawing.Color.White;
-            this.rtbAfiseazaAngajati.Location = new System.Drawing.Point(10, 20);
-            this.rtbAfiseazaAngajati.Name = "rtbAfiseazaAngajati";
-            this.rtbAfiseazaAngajati.Size = new System.Drawing.Size(556, 110);
-            this.rtbAfiseazaAngajati.TabIndex = 18;
-            this.rtbAfiseazaAngajati.Text = "";
-            // 
             // grbAdaugaAngajat
             // 
+            this.grbAdaugaAngajat.Controls.Add(this.cbxFunctie);
             this.grbAdaugaAngajat.Controls.Add(this.lblMesaj);
             this.grbAdaugaAngajat.Controls.Add(this.btnAdaugare);
-            this.grbAdaugaAngajat.Controls.Add(this.txtFunctieAngajat);
             this.grbAdaugaAngajat.Controls.Add(this.lblPrenumeAngaajt);
             this.grbAdaugaAngajat.Controls.Add(this.txtCNPAngajat);
             this.grbAdaugaAngajat.Controls.Add(this.lblNumeAngajat);
@@ -332,6 +376,25 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAdaugaAngajat.TabIndex = 23;
             this.grbAdaugaAngajat.TabStop = false;
             this.grbAdaugaAngajat.Text = "Adaugare angajat";
+            // 
+            // cbxFunctie
+            // 
+            this.cbxFunctie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbxFunctie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFunctie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxFunctie.ForeColor = System.Drawing.Color.White;
+            this.cbxFunctie.FormattingEnabled = true;
+            this.cbxFunctie.Items.AddRange(new object[] {
+            "Receptioner",
+            "Manager",
+            "Administrator",
+            "Paznic",
+            "Consultant",
+            "Casier"});
+            this.cbxFunctie.Location = new System.Drawing.Point(94, 164);
+            this.cbxFunctie.Name = "cbxFunctie";
+            this.cbxFunctie.Size = new System.Drawing.Size(120, 30);
+            this.cbxFunctie.TabIndex = 27;
             // 
             // lblMesaj
             // 
@@ -356,17 +419,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnAdaugare.Text = "Adaugare";
             this.btnAdaugare.UseVisualStyleBackColor = false;
             this.btnAdaugare.Click += new System.EventHandler(this.btnAdaugare_Click);
-            // 
-            // txtFunctieAngajat
-            // 
-            this.txtFunctieAngajat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtFunctieAngajat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFunctieAngajat.ForeColor = System.Drawing.Color.White;
-            this.txtFunctieAngajat.Location = new System.Drawing.Point(94, 165);
-            this.txtFunctieAngajat.MaxLength = 30;
-            this.txtFunctieAngajat.Name = "txtFunctieAngajat";
-            this.txtFunctieAngajat.Size = new System.Drawing.Size(120, 27);
-            this.txtFunctieAngajat.TabIndex = 16;
             // 
             // lblPrenumeAngaajt
             // 
@@ -473,6 +525,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbCautareClient.ResumeLayout(false);
             this.grbCautareClient.PerformLayout();
             this.grbAfiseazaAngajati.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAngajati)).EndInit();
             this.grbAdaugaAngajat.ResumeLayout(false);
             this.grbAdaugaAngajat.PerformLayout();
             this.ResumeLayout(false);
@@ -501,11 +554,9 @@ namespace InterfazaUtilizator_WindowsForms
         private System.Windows.Forms.Button btnCautare;
         private System.Windows.Forms.GroupBox grbAfiseazaAngajati;
         private System.Windows.Forms.Button btnAfisare;
-        private System.Windows.Forms.RichTextBox rtbAfiseazaAngajati;
         private System.Windows.Forms.GroupBox grbAdaugaAngajat;
         private System.Windows.Forms.Label lblMesaj;
         private System.Windows.Forms.Button btnAdaugare;
-        private System.Windows.Forms.TextBox txtFunctieAngajat;
         private System.Windows.Forms.Label lblPrenumeAngaajt;
         private System.Windows.Forms.TextBox txtCNPAngajat;
         private System.Windows.Forms.Label lblNumeAngajat;
@@ -514,5 +565,8 @@ namespace InterfazaUtilizator_WindowsForms
         private System.Windows.Forms.Label lblCNPAngajat;
         private System.Windows.Forms.TextBox txtPrenumeAngajat;
         private System.Windows.Forms.Label lblTitluAngajat;
+        private System.Windows.Forms.ComboBox cbxFunctie;
+        private System.Windows.Forms.DataGridView dgvAngajati;
+        private System.Windows.Forms.Button btnStergere;
     }
 }

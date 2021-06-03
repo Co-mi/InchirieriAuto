@@ -14,6 +14,8 @@ namespace InterfazaUtilizator_WindowsForms
 {
     public partial class PaginaMasini : UserControl
     {
+
+        public const int LUNGIME_SERIE = 17;
         OptiuniMasina optiuniSelectate = new OptiuniMasina();
         IStocareMasini adminMasini = StocareFactory.GetAdministratorStocareMasini();
         List<Masina> masini;
@@ -22,22 +24,21 @@ namespace InterfazaUtilizator_WindowsForms
         {
             InitializeComponent();
             masini = adminMasini.GetMasini();
+            btnStergere.Enabled = false;
         }
 
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
             ModelMasina? modelSelectat = GetModelSelectat();
             //set optiuni
-            lblMesaj.ForeColor = Color.Red;
-            if (txtSerieMasina.Text == "" || txtPretMasina.Text == "")
-                lblMesaj.Text = "*completati toate \ncampurile!";
-            else
+            
+            if(DateValide())
             {
-                lblMesaj.ForeColor = Color.Green;
-                lblMesaj.Text = "Adaugare realizata\ncu succes!";
-                string infoMasina = (int)modelSelectat + "," + txtSerieMasina.Text.ToUpper() + "," + txtPretMasina.Text + "," + (int)optiuniSelectate;
+                
+                string infoMasina = txtSerieMasina.Text.ToUpper() + "," + (int)modelSelectat +  "," + txtPretMasina.Text + "," + (int)optiuniSelectate;
                 masini.Add(new Masina(infoMasina));
                 adminMasini.AddMasina(new Masina(infoMasina));
+                lblMesaj.Text = "Adaugare realizata\ncu succes!";
             }
         }
 
@@ -81,8 +82,9 @@ namespace InterfazaUtilizator_WindowsForms
         private void btnAfisare_Click(object sender, EventArgs e)
         {
             ResetareMesaje();
+            btnStergere.Enabled = true;
             lsbAfisareMasini.Items.Clear();
-            string antetTabel = String.Format("{0,-13}{1,-20}{2,5}  {3,-30}\n", "Model", "Serie sasiu", "Pret", "Facilitati");
+            string antetTabel = String.Format("{0,-20}{1,-13}{2,5}  {3,-30}\n", "Serie sasiu", "Model", "Pret", "Facilitati");
             lsbAfisareMasini.Items.Add(antetTabel);
 
             foreach (Masina _masina in masini)
@@ -95,51 +97,36 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void btnCautare_Click(object sender, EventArgs e)
         {
-            ResetareMesaje();
+            
             Masina masina_cautata;
-            lblMesaj2.ForeColor = Color.Red;
-            if (txtCautareSerieMasina.Text == "")
+            if(DateValide1())
             {
-                lblMesaj2.ForeColor = Color.Red;
-                lblMesaj2.Text = "*completati toate campurile!";
-            }
-            else
-            {
-
+                ResetareMesaje();
                 masina_cautata = adminMasini.GetMasina( txtCautareSerieMasina.Text.ToUpper());
                 if (masina_cautata == null)
                 {
-                    lblMesaj2.ForeColor = Color.White;
                     lblMesaj2.Text = "Masina nu a fost gasita!";
                 }
                 else
                 {
-                    lsbAfisareMasini.Items.Clear();
-                    lblMesaj2.ForeColor = Color.Green;
-                    lblMesaj2.Text = "Masina a fost gasita!";
-                    string antetTabel = String.Format("{0,-13}{1,-20}{2,5}  {3,-30}\n", "Model", "Serie sasiu", "Pret", "Facilitati");
+                    lsbAfisareMasini.Items.Clear();              
+                    string antetTabel = String.Format("{0,-20}{1,-13}{2,5}  {3,-30}\n", "Serie sasiu", "Model", "Pret", "Facilitati");
                     lsbAfisareMasini.Items.Add(antetTabel);
                     lsbAfisareMasini.Items.Add(masina_cautata.ConversieLaSir());
+                    lblMesaj2.Text = "Masina a fost gasita!";
                 }
             }
         }
 
         private void btnModificare_Click(object sender, EventArgs e)
         {
-            ResetareMesaje();
+            
             Masina masina_cautata;
-            lblMesaj2.ForeColor = Color.Red;
-            if (txtCautareSerieMasina.Text == "")
-            {
-                lblMesaj2.ForeColor = Color.Red;
-                lblMesaj2.Text = "*completati toate campurile!";
-            }
-            else
+            if(DateValide1())
             {
                 masina_cautata = adminMasini.GetMasina(txtCautareSerieMasina.Text.ToUpper());
                 if (masina_cautata == null)
                 {
-                    lblMesaj2.ForeColor = Color.White;
                     lblMesaj2.Text = "Masina nu a fost gasita!";
                 }
                 else
@@ -151,33 +138,80 @@ namespace InterfazaUtilizator_WindowsForms
                     }
                     ModelMasina? modelSelectat = GetModelSelectat();
                     masini[i].Model = (ModelMasina)modelSelectat;
-
-                    if (txtSerieMasina.Text.ToUpper() != "")
+                    if (txtSerieMasina.Text.ToUpper() != string.Empty)
                         masini[i].Serie = txtSerieMasina.Text.ToUpper();
-                    if (txtPretMasina.Text != "")
+                    if (txtPretMasina.Text != string.Empty)
                         masini[i].Pret = Convert.ToInt32(txtPretMasina.Text);
-
-
                     masini[i].Optiuni = optiuniSelectate;
-
-                    //if (txtSerieMasina.Text.ToUpper() == "" && txtPretMasina.Text == "")
-                    //{
-                    //    lblMesaj2.Text = "Modificare esuata!";
-                    //}
-                    //else
-                    {
-                        adminMasini.UpdateFisierMasini(masini);
-                        lblMesaj2.ForeColor = Color.Green;
-                        lblMesaj2.Text = "Modificare realizata cu succes!";
-                    }
+                    adminMasini.UpdateFisierMasini(masini);
+                    ResetareMesaje();
+                    lblMesaj2.Text = "Modificare realizata cu succes!";
                 }
             }
         }
         
+        bool DateValide()
+        {
+            lblMesaj.ForeColor = Color.Red;
+            if(txtSerieMasina.Text == string.Empty)
+            {
+                lblMesaj.Text = "Completati casuta \ntext serie..";
+                return false;
+            }
+            if(txtPretMasina.Text == string.Empty)
+            {
+                lblMesaj.Text = "Completati casuta \ntext pret..";
+                return false;
+            }
+            else if (!int.TryParse(txtPretMasina.Text, out _))
+            {
+                lblMesaj.Text = "Pret incorect";
+                return false;
+            }
+            lblMesaj.ForeColor = Color.Green;
+            return true;
 
+        }
+
+        bool DateValide1()
+        {
+            lblMesaj2.ForeColor = Color.Red;
+            if(txtCautareSerieMasina.Text == string.Empty)
+            {
+                lblMesaj2.Text = "Completati casuta text serie..";
+                return false;
+            }
+            else if(txtCautareSerieMasina.Text.Length != LUNGIME_SERIE)
+            {
+                lblMesaj2.Text = "Serie invalida!";
+                return false;
+            }
+            lblMesaj2.ForeColor = Color.Green;
+            return true;
+        }
         public void ResetareMesaje()
         {
-            lblMesaj.Text = lblMesaj2.Text  = string.Empty;
+            lblMesaj.Text = string.Empty;
+            lblMesaj2.Text  = string.Empty;
+            txtSerieMasina.Text = string.Empty;
+            txtPretMasina.Text = string.Empty;
+            ckbAerConditionat.Checked = false;
+            ckbCutieAutomata.Checked = false;
+            ckbDecapotabila.Checked = false;
+            ckbGeamuriElectrice.Checked = false;
+            ckbNavigatie.Checked = false;
+            ckbNiciuna.Checked = true;
+        }
+
+        private void btnStergere_Click(object sender, EventArgs e)
+        {
+          
+                string sir = lsbAfisareMasini.SelectedItem.ToString();
+                string[] date = sir.Split(' ');
+                masini.RemoveAll(m => m.Serie == date[0]); //functie anonima ce returneaza masina pentru care seria = date[0]
+                adminMasini.UpdateFisierMasini(masini);
+                btnAfisare.PerformClick();
+            
         }
     }
 }

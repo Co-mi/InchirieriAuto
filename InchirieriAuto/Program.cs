@@ -8,18 +8,14 @@ namespace InterfataUtilizator_Consola
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
-
-
             List<Client> clienti ;
             List<Angajat> angajati ;
             List<Masina> masini ;
             List<Inchiriere> inchirieri  ;
 
-            //variabila de tip interfata 'IStocareData' care este initializata 
-            //cu o instanta a clasei 'AdministrareStudenti_FisierText' sau o instanta a clasei 'AdministrareStudenti_FisierBinar' in functie de setarea 'FormatSalvare' din fisierul AppConfig
+     
             IStocareClienti adminClienti = StocareFactory.GetAdministratorStocareClienti();
             IStocareAngajati adminAngajati = StocareFactory.GetAdministratorStocareAngajati();
             IStocareMasini adminMasini = StocareFactory.GetAdministratorStocareMasini();
@@ -227,7 +223,7 @@ namespace InterfataUtilizator_Consola
                     Console.WriteLine("Introdu noul CNP: ");
                     clienti[i].CNP = Console.ReadLine();
                 }
-                //admminClienti.UpdateFisierClienti(clienti);
+             
                 Console.WriteLine("Modificare realizata cu succes!");
             }
         }
@@ -540,5 +536,5 @@ namespace InterfataUtilizator_Consola
 //Angajat a = new Angajat("Croitoru,Adriana,1058645289958,Receptioner");//constructor Angajat
 //Console.WriteLine("\nAfisare informatii angajat:\n"+a.ConversieLaSir());
 
-//Inchiriere inc = new Inchiriere("5551466845568,000120,20/04/2021,30/04-2021");//constructor Inchiriere
+//Inchiriere inc = new Inchiriere("5551466845568,000120,20/04/2021,30/04/2021");//constructor Inchiriere
 //Console.WriteLine("\nAfisare informatii inchiriere:\n"+inc.ConversieLasir());

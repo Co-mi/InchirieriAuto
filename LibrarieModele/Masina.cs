@@ -5,13 +5,9 @@ namespace LibrarieModele
     public class Masina
     {
         //Constante
-        private const bool SUCCES = true;
-        private const string SEPARATOR_AFISARE = " ";
         private const char SEPARATOR_PRINCIPAL_FISIER = ',';
-        private const char SEPARATOR_SECUNDAR_FISIER = ' ';
-
-        private const int MODEL = 0;
-        private const int SERIE = 1;
+        private const int MODEL = 1;
+        private const int SERIE = 0;
         private const int PRET = 2;
         private const int OPTIUNI = 3;
         public ModelMasina Model { get; set; }
@@ -23,8 +19,8 @@ namespace LibrarieModele
         public Masina(string data)
         {
             string[] _date = data.Split(',');
-            Model = (ModelMasina)Convert.ToInt32(_date[MODEL]);
             Serie = _date[SERIE];
+            Model = (ModelMasina)Convert.ToInt32(_date[MODEL]);
             Pret = int.Parse(_date[PRET]);
 
             Optiuni = (OptiuniMasina)0;
@@ -38,12 +34,12 @@ namespace LibrarieModele
 
         public string ConversieLaSir()
         {
-            string dateForDisplay = string.Format("{0,-13}{1,-20}{2,5}   {3,-30}\n", Model,Serie.ToUpper(),Pret.ToString(), Optiuni.ToString());
+            string dateForDisplay = string.Format("{1,-20}{0,-13}{2,5}   {3,-30}\n", Model,Serie.ToUpper(),Pret.ToString(), Optiuni.ToString());
             return dateForDisplay;
         }
         public string ConversieLaSir_PentruScriereInFisier()
         {
-            string s = string.Format("{1}{0}{2}{0}{3}{0}{4}",
+            string s = string.Format("{2}{0}{1}{0}{3}{0}{4}",
                 SEPARATOR_PRINCIPAL_FISIER, (int)Model, (Serie ?? " NECUNOSCUT "), (Pret.ToString() ?? " NECUNOSCUT "),(int)Optiuni);
            
             return s;

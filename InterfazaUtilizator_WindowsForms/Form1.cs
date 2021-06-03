@@ -56,7 +56,7 @@ namespace InterfazaUtilizator_WindowsForms
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
-            movX = e.X;
+            movX = e.X + 70;
             movY = e.Y;
         }
 
