@@ -113,11 +113,6 @@ namespace InterfazaUtilizator_WindowsForms
                 lblMesaj.Text = "Data inc. incorecta";
                 return false;
             }
-            //if (!int.TryParse(txtIDInchiriere.Text, out _))
-            //{
-            //    lblMesaj.Text = "ID incorect";
-            //    return false;
-            //}
             lblMesaj.ForeColor = Color.Green;
             return true;
                 

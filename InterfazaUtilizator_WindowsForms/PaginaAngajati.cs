@@ -14,9 +14,9 @@ namespace InterfazaUtilizator_WindowsForms
 {
     public partial class PaginaAngajati : UserControl
     {
-        public const int LUNGIME_CNP = 13;
-        public const int INDEX_CMB = -1;
-        public const int CNP_ = 2;
+        private const int LUNGIME_CNP = 13;
+        private const int INDEX_CMB = -1;
+        private const int CNP_ = 2;
         IStocareAngajati adminAngajati = StocareFactory.GetAdministratorStocareAngajati();
         List<Angajat> angajati;
         public PaginaAngajati()

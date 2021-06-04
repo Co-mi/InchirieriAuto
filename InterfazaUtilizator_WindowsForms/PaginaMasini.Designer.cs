@@ -55,6 +55,7 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblPretMasina = new System.Windows.Forms.Label();
             this.txtSerieMasina = new System.Windows.Forms.TextBox();
             this.grbAfiseazaMasini = new System.Windows.Forms.GroupBox();
+            this.btnStergere = new System.Windows.Forms.Button();
             this.lsbAfisareMasini = new System.Windows.Forms.ListBox();
             this.btnAfisare = new System.Windows.Forms.Button();
             this.grbCautaMasini = new System.Windows.Forms.GroupBox();
@@ -64,7 +65,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.txtCautareSerieMasina = new System.Windows.Forms.TextBox();
             this.btnModificare = new System.Windows.Forms.Button();
             this.btnCautare = new System.Windows.Forms.Button();
-            this.btnStergere = new System.Windows.Forms.Button();
             this.grbAdaugaMasini.SuspendLayout();
             this.grbAfiseazaMasini.SuspendLayout();
             this.grbCautaMasini.SuspendLayout();
@@ -316,9 +316,8 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblMesaj.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMesaj.Location = new System.Drawing.Point(6, 327);
             this.lblMesaj.Name = "lblMesaj";
-            this.lblMesaj.Size = new System.Drawing.Size(15, 17);
+            this.lblMesaj.Size = new System.Drawing.Size(0, 17);
             this.lblMesaj.TabIndex = 18;
-            this.lblMesaj.Text = "5";
             // 
             // btnAdaugare
             // 
@@ -404,6 +403,21 @@ namespace InterfazaUtilizator_WindowsForms
             this.grbAfiseazaMasini.TabStop = false;
             this.grbAfiseazaMasini.Text = "Afisare masini";
             // 
+            // btnStergere
+            // 
+            this.btnStergere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStergere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStergere.ForeColor = System.Drawing.Color.White;
+            this.btnStergere.Location = new System.Drawing.Point(6, 230);
+            this.btnStergere.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStergere.Name = "btnStergere";
+            this.btnStergere.Size = new System.Drawing.Size(86, 32);
+            this.btnStergere.TabIndex = 7;
+            this.btnStergere.Text = "Sterge";
+            this.btnStergere.UseVisualStyleBackColor = false;
+            this.btnStergere.Click += new System.EventHandler(this.btnStergere_Click);
+            // 
             // lsbAfisareMasini
             // 
             this.lsbAfisareMasini.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
@@ -464,9 +478,8 @@ namespace InterfazaUtilizator_WindowsForms
             this.lblMesaj2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMesaj2.Location = new System.Drawing.Point(405, 34);
             this.lblMesaj2.Name = "lblMesaj2";
-            this.lblMesaj2.Size = new System.Drawing.Size(15, 17);
+            this.lblMesaj2.Size = new System.Drawing.Size(0, 17);
             this.lblMesaj2.TabIndex = 22;
-            this.lblMesaj2.Text = "5";
             // 
             // lblSerieCautata
             // 
@@ -519,21 +532,6 @@ namespace InterfazaUtilizator_WindowsForms
             this.btnCautare.Text = "Cautare";
             this.btnCautare.UseVisualStyleBackColor = false;
             this.btnCautare.Click += new System.EventHandler(this.btnCautare_Click);
-            // 
-            // btnStergere
-            // 
-            this.btnStergere.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStergere.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStergere.ForeColor = System.Drawing.Color.White;
-            this.btnStergere.Location = new System.Drawing.Point(6, 230);
-            this.btnStergere.Margin = new System.Windows.Forms.Padding(4);
-            this.btnStergere.Name = "btnStergere";
-            this.btnStergere.Size = new System.Drawing.Size(86, 32);
-            this.btnStergere.TabIndex = 7;
-            this.btnStergere.Text = "Sterge";
-            this.btnStergere.UseVisualStyleBackColor = false;
-            this.btnStergere.Click += new System.EventHandler(this.btnStergere_Click);
             // 
             // PaginaMasini
             // 

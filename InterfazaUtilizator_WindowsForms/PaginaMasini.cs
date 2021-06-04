@@ -14,8 +14,8 @@ namespace InterfazaUtilizator_WindowsForms
 {
     public partial class PaginaMasini : UserControl
     {
+        private const int LUNGIME_SERIE = 17;
 
-        public const int LUNGIME_SERIE = 17;
         OptiuniMasina optiuniSelectate = new OptiuniMasina();
         IStocareMasini adminMasini = StocareFactory.GetAdministratorStocareMasini();
         List<Masina> masini;
@@ -89,7 +89,6 @@ namespace InterfazaUtilizator_WindowsForms
 
             foreach (Masina _masina in masini)
             {
-                //var linieTabel = String.Format("{0,-13}{1,-20}{2,5}   {3,-30}\n", _masina.Model, _masina.Serie.ToUpper(), _masina.Pret.ToString(),_masina.Optiuni.ToString());
                 lsbAfisareMasini.Items.Add(_masina.ConversieLaSir());
             }
         }

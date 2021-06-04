@@ -38,9 +38,10 @@ namespace InterfazaUtilizator_WindowsForms
             set { btnAcasa = value; }
         }
         //Pentru a putea muta fereastra
-        int mov;
+        bool butonApasat;
         int movX;
         int movY;
+        private const int DECALAJ = 70;
 
         public Form1()
         {
@@ -55,14 +56,14 @@ namespace InterfazaUtilizator_WindowsForms
         #region PermitereMutareFereastra
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
-            mov = 1;
-            movX = e.X + 70;
+            butonApasat = true;
+            movX = e.X + DECALAJ;
             movY = e.Y;
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
-            if(mov==1)
+            if(butonApasat)
             {
                 this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
             }
@@ -70,7 +71,7 @@ namespace InterfazaUtilizator_WindowsForms
 
         private void panel2_MouseUp(object sender, MouseEventArgs e)
         {
-            mov = 0;
+            butonApasat = false;
         }
 
         #endregion

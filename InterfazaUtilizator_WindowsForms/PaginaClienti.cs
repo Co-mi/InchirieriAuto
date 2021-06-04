@@ -49,7 +49,6 @@ namespace InterfazaUtilizator_WindowsForms
             ResetareMesaje();
             btnStergere.Enabled = true;
             dgvClienti.DataSource = clienti.Select(a => new { a.ID_Client,a.Nume,a.Prenume, a.CNP}).ToList();
-            //dgvClienti.DataSource = clienti;
             
         }
 
