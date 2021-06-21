@@ -1,8 +1,9 @@
 ## Rent a car  
 ### Faculty Graphics Project - 2021
 
-- built in C#
-- visible in Visual Studio
+- built with C#
+- Windows Forms application
+- manage an Rent a Car Company
 ## Preview Images:
 
 ![](Images/Home.jpg)
